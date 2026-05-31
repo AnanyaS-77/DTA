@@ -1,11 +1,10 @@
 
-import './App.css'
+import ContactUs from "./components/ContactUs";
+import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1>DTA</h1>
-    </>
+    <ContactUs />
   );
 }
 
