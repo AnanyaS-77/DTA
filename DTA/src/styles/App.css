@@ -23,45 +23,41 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   flex: 0 0 auto;
   color: var(--ink);
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 35px;
-  height: 35px;
-  border: 2px solid var(--red);
+.brand-image {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.brand-image-one {
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  color: var(--red);
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0;
+  background-image: url("/Image1.png");
+  background-position: center 43%;
+  background-repeat: no-repeat;
+  background-size: 178px auto;
 }
 
-.brand-text {
-  display: grid;
-  gap: 1px;
-  font-size: 8px;
-  line-height: 1;
-  text-transform: uppercase;
+.brand-image-two-wrap {
+  display: flex;
+  align-items: center;
+  width: 94px;
+  height: 29px;
 }
 
-.brand-text strong {
-  color: var(--red);
-  font-size: 9px;
+.brand-image-two {
+  width: 94px;
+  height: 29px;
+  object-fit: contain;
 }
 
 .brand-light {
   color: #ffffff;
-}
-
-.brand-light .brand-text strong,
-.brand-light .brand-mark {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.82);
 }
 
 .main-nav {
