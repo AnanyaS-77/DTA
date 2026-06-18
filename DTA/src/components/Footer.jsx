@@ -7,7 +7,7 @@ function Footer() {
         <Logo light />
         <nav className="footer-nav" aria-label="Footer navigation">
           <a href="/">Home</a>
-          <a href="/#about">About</a>
+          <a href="/about">About</a>
           <a href="/contact">Contact</a>
           <a href="#">Privacy</a>
           <a href="#">T&amp;C</a>

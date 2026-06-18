@@ -1,11 +1,8 @@
 import Logo from "./Logo";
 
 const navItems = [
-  { label: "About", href: "/#about" },
-  { label: "Why Us", href: "/#why-us" },
-  { label: "Legacy", href: "/#legacy" },
-  { label: "Our Programs", href: "/#programs" },
-  { label: "What We Teach", href: "/#teach" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
 ];
 
 function Navbar() {
@@ -20,10 +17,10 @@ function Navbar() {
       </nav>
 
       <div className="header-actions">
-        <button className="batch-button" type="button">
+        <a className="batch-button" href="/#batches">
           Batch Timings
           <span aria-hidden="true">v</span>
-        </button>
+        </a>
         <a className="talk-button" href="/contact#contact-form">
           Talk to Us
           <span aria-hidden="true">-&gt;</span>

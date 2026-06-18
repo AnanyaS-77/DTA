@@ -1,5 +1,6 @@
-// Add the uploaded contact photo to src/assets, import it here, then assign it below.
-const CONTACT_IMAGE_URL = "";
+import contactImage from "../assets/Contact/Image1.png";
+
+const CONTACT_IMAGE_URL = contactImage;
 
 const reachCards = [
   {

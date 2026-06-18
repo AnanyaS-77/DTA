@@ -1,5 +1,6 @@
 
 import Home from "./components/Home";
+import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -7,6 +8,7 @@ import "./styles/App.css";
 
 const routes = {
   "/": Home,
+  "/about": About,
   "/contact": ContactUs,
 };
 
