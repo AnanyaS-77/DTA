@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import taekwondoImage from "../../../assets/About/Image8.png";
 import selfDefenceImage from "../../../assets/About/Image9.jpg";
 import poomsaeImage from "../../../assets/About/Image10.jpg";
@@ -25,21 +25,64 @@ const trainingCards = [
 ];
 
 function TrainingCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const firstLoopIndex = trainingCards.length;
+  const lastLoopIndex = trainingCards.length * 2 - 1;
+  const trackRef = useRef(null);
+  const [slideIndex, setSlideIndex] = useState(firstLoopIndex);
+  const [slideOffset, setSlideOffset] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const visibleCards = trainingCards.map((_, index) => {
-    const cardIndex = (activeIndex + index) % trainingCards.length;
-    return trainingCards[cardIndex];
-  });
+  const repeatedCards = [...trainingCards, ...trainingCards, ...trainingCards];
+
+  useEffect(() => {
+    const track = trackRef.current;
+
+    if (!track) {
+      return undefined;
+    }
+
+    const updateOffset = () => {
+      const firstCard = track.querySelector(".about-training-card");
+      const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      const cardWidth = firstCard?.getBoundingClientRect().width || 0;
+
+      setSlideOffset(slideIndex * (cardWidth + gap));
+    };
+
+    updateOffset();
+    const resizeObserver = new ResizeObserver(updateOffset);
+    resizeObserver.observe(track);
+
+    return () => resizeObserver.disconnect();
+  }, [slideIndex]);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setIsTransitioning(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const showPrevious = () => {
-    setActiveIndex((currentIndex) =>
-      currentIndex === 0 ? trainingCards.length - 1 : currentIndex - 1
-    );
+    setIsTransitioning(true);
+    setSlideIndex((currentIndex) => currentIndex - 1);
   };
 
   const showNext = () => {
-    setActiveIndex((currentIndex) => (currentIndex + 1) % trainingCards.length);
+    setIsTransitioning(true);
+    setSlideIndex((currentIndex) => currentIndex + 1);
+  };
+
+  const handleTransitionEnd = () => {
+    if (slideIndex < firstLoopIndex) {
+      setIsTransitioning(false);
+      setSlideIndex(lastLoopIndex);
+      requestAnimationFrame(() => requestAnimationFrame(() => setIsTransitioning(true)));
+    }
+
+    if (slideIndex > lastLoopIndex) {
+      setIsTransitioning(false);
+      setSlideIndex(firstLoopIndex);
+      requestAnimationFrame(() => requestAnimationFrame(() => setIsTransitioning(true)));
+    }
   };
 
   return (
@@ -56,9 +99,17 @@ function TrainingCarousel() {
       </div>
 
       <div className="about-training-viewport" aria-live="polite">
-        <div className="about-training-track">
-          {visibleCards.map((card) => (
-            <article className="about-training-card" key={card.title}>
+        <div
+          className="about-training-track"
+          ref={trackRef}
+          onTransitionEnd={handleTransitionEnd}
+          style={{
+            transform: `translate3d(-${slideOffset}px, 0, 0)`,
+            transition: isTransitioning ? undefined : "none",
+          }}
+        >
+          {repeatedCards.map((card, index) => (
+            <article className="about-training-card" key={`${card.title}-${index}`}>
               <figure className="about-training-image">
                 <img src={card.image} alt={card.alt} />
               </figure>
