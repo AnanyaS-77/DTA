@@ -891,6 +891,493 @@ h3 {
   font-size: 12px;
 }
 
+.about-page {
+  background: #050506;
+}
+
+@keyframes aboutFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-banner {
+  position: relative;
+  min-height: max(720px, calc(100svh - 74px));
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 0 70px 132px;
+  color: #ffffff;
+  background: #050506;
+}
+
+.about-banner-image,
+.about-banner-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.about-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.about-banner-shade {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.38) 45%, rgba(0, 0, 0, 0.22) 100%),
+    linear-gradient(0deg, #050506 0%, rgba(0, 0, 0, 0.8) 13%, rgba(0, 0, 0, 0) 48%);
+}
+
+.about-banner-content {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, 100%);
+  animation: aboutFadeUp 720ms ease both;
+}
+
+.about-banner-content h1 {
+  max-width: 1120px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: clamp(46px, 5.4vw, 94px);
+  line-height: 0.95;
+  font-weight: 900;
+}
+
+.about-banner-heading-line,
+.about-banner-heading-accent {
+  display: block;
+}
+
+.about-banner-heading-line {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.about-banner-heading-accent {
+  color: var(--red);
+}
+
+.about-banner-content p {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.about-champions {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.96fr) minmax(360px, 0.88fr);
+  gap: clamp(44px, 8vw, 116px);
+  align-items: start;
+  margin-top: -58px;
+  padding: 94px 70px 102px;
+  border-radius: 54px 54px 0 0;
+  background: #ffffff;
+}
+
+.about-champions-copy {
+  display: grid;
+  gap: 54px;
+  max-width: 620px;
+  animation: aboutFadeUp 720ms ease both;
+}
+
+.about-champions-copy h2 {
+  margin-bottom: 10px;
+  color: #111214;
+  font-size: clamp(38px, 4.8vw, 58px);
+  line-height: 0.9;
+  font-weight: 900;
+}
+
+.about-champions-copy h2 span {
+  display: block;
+}
+
+.about-champions-intro {
+  max-width: 430px;
+  color: #555861;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.about-champions-body {
+  display: grid;
+  gap: 20px;
+  color: #111214;
+  font-size: 15px;
+  line-height: 1.32;
+}
+
+.about-goals p {
+  margin-bottom: 12px;
+  color: var(--red);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.about-goal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.about-goal-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0 9px;
+  border: 1px solid #bfc1c7;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #111214;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.about-goal-list span.is-active {
+  border-color: #f3b7bb;
+  background: #fff2f3;
+  color: var(--red);
+}
+
+.about-champions-media {
+  width: min(100%, 520px);
+  justify-self: end;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f2f2f3;
+  animation: aboutFadeUp 720ms ease 80ms both;
+}
+
+.about-champions-media img {
+  width: 100%;
+  aspect-ratio: 0.83;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-marquee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 8px 20px;
+  background: var(--red);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  animation: aboutFadeUp 520ms ease both;
+}
+
+.about-marquee span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.about-marquee b {
+  font-size: 17px;
+  line-height: 0;
+}
+
+.about-authorities,
+.about-learn,
+.about-training-carousel {
+  background: #ffffff;
+}
+
+.about-authorities {
+  padding: 102px 70px 118px;
+}
+
+.about-section-heading {
+  max-width: 600px;
+  animation: aboutFadeUp 650ms ease both;
+}
+
+.about-section-heading h2 {
+  margin-bottom: 10px;
+  color: #111214;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 0.94;
+  font-weight: 900;
+}
+
+.about-section-heading p {
+  max-width: 500px;
+  color: #4f5259;
+  font-size: 13px;
+  line-height: 1.22;
+}
+
+.about-authority-logos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  align-items: center;
+  gap: clamp(44px, 10vw, 160px);
+  margin-top: 66px;
+}
+
+.about-authority-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  animation: aboutFadeUp 650ms ease both;
+  transition: transform 220ms ease;
+}
+
+.about-authority-logo:hover {
+  transform: translateY(-3px);
+}
+
+.about-authority-logo:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.about-authority-logo:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.about-authority-logo img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.world-taekwondo-logo {
+  max-width: 260px;
+  max-height: 112px;
+}
+
+.kukkiwon-logo {
+  max-width: 250px;
+  max-height: 128px;
+}
+
+.dta-authority-logo {
+  max-width: 148px;
+  max-height: 148px;
+}
+
+.about-learn {
+  padding: 62px 70px 150px;
+}
+
+.about-learn-heading {
+  margin-bottom: 64px;
+}
+
+.about-coach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 360px));
+  justify-content: center;
+  gap: clamp(72px, 14vw, 205px);
+}
+
+.about-coach-card {
+  text-align: center;
+  animation: aboutFadeUp 650ms ease both;
+}
+
+.about-coach-card:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.about-coach-image {
+  display: grid;
+  place-items: end center;
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border: 1px solid #bfc1c7;
+  border-radius: 6px;
+  background: #f4f4f5;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-coach-card:hover .about-coach-image {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(17, 18, 20, 0.1);
+}
+
+.about-coach-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.about-coach-card h3 {
+  margin-bottom: 10px;
+  color: #111214;
+  font-size: 17px;
+  line-height: 1.12;
+  font-weight: 900;
+}
+
+.about-coach-card p {
+  max-width: 470px;
+  margin: 0 auto 20px;
+  color: #111214;
+  font-size: 13px;
+  line-height: 1.22;
+}
+
+.about-coach-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.about-coach-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0 9px;
+  border: 1px solid #bfc1c7;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #111214;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.about-coach-tags span.is-active {
+  border-color: #f3b7bb;
+  background: #fff2f3;
+  color: var(--red);
+}
+
+.about-training-carousel {
+  padding: 70px 70px 94px;
+}
+
+.about-training-heading {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.about-training-heading h2 {
+  max-width: 720px;
+}
+
+.about-training-heading p {
+  max-width: 690px;
+}
+
+.about-training-viewport {
+  overflow: hidden;
+}
+
+.about-training-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.about-training-card {
+  min-width: 0;
+  text-align: left;
+  animation: aboutFadeUp 620ms ease both;
+}
+
+.about-training-card:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.about-training-card:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.about-training-image {
+  width: 100%;
+  aspect-ratio: 1.34 / 1;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f2f2f3;
+}
+
+.about-training-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 260ms ease;
+}
+
+.about-training-card:hover .about-training-image img {
+  transform: scale(1.035);
+}
+
+.about-training-card h3 {
+  margin-bottom: 8px;
+  color: #111214;
+  font-size: 18px;
+  line-height: 1.12;
+  font-weight: 900;
+}
+
+.about-training-card p {
+  max-width: 390px;
+  color: #111214;
+  font-size: 13px;
+  line-height: 1.22;
+}
+
+.about-training-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 42px;
+}
+
+.about-training-controls button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: #f0f0f1;
+  color: #111214;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.about-training-controls button:hover {
+  background: #111214;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.about-training-controls span {
+  font-size: 17px;
+  line-height: 1;
+}
+
 .about-hero {
   display: grid;
   grid-template-columns: minmax(320px, 0.9fr) minmax(380px, 1fr);
@@ -1247,6 +1734,11 @@ h3 {
 @media (max-width: 1120px) {
   .site-header,
   .hero-section,
+  .about-banner,
+  .about-champions,
+  .about-authorities,
+  .about-learn,
+  .about-training-carousel,
   .intro-card-section,
   .authority-section,
   .champions-section,
@@ -1286,6 +1778,7 @@ h3 {
   .intro-card-section,
   .champions-section,
   .age-programs-section,
+  .about-champions,
   .about-hero,
   .about-coach-band,
   .contact-hero {
@@ -1304,9 +1797,18 @@ h3 {
   .why-grid,
   .training-card-grid,
   .batch-grid,
+  .about-authority-logos,
   .about-values-grid,
   .reach-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-coach-grid {
+    gap: 56px;
+  }
+
+  .about-training-track {
+    gap: 16px;
   }
 
   .coach-grid {
@@ -1354,6 +1856,11 @@ h3 {
   }
 
   .hero-section,
+  .about-banner,
+  .about-champions,
+  .about-authorities,
+  .about-learn,
+  .about-training-carousel,
   .intro-card-section,
   .authority-section,
   .champions-section,
@@ -1380,6 +1887,23 @@ h3 {
     padding-bottom: 62px;
   }
 
+  .about-banner {
+    min-height: max(620px, calc(100svh - 96px));
+    padding-bottom: 104px;
+  }
+
+  .about-banner-image {
+    object-position: 52% center;
+  }
+
+  .about-banner-content h1 {
+    font-size: 42px;
+  }
+
+  .about-banner-heading-line {
+    white-space: normal;
+  }
+
   .hero-content h1 {
     font-size: 42px;
   }
@@ -1392,6 +1916,9 @@ h3 {
 
   .intro-stats,
   .authority-grid,
+  .about-authority-logos,
+  .about-coach-grid,
+  .about-training-track,
   .why-grid,
   .coach-grid,
   .training-card-grid,
@@ -1408,6 +1935,10 @@ h3 {
   }
 
   .authority-section,
+  .about-champions,
+  .about-authorities,
+  .about-learn,
+  .about-training-carousel,
   .champions-section,
   .why-section,
   .coaches-section,
@@ -1421,6 +1952,95 @@ h3 {
   .about-coach-band {
     padding-top: 64px;
     padding-bottom: 64px;
+  }
+
+  .about-champions {
+    gap: 36px;
+    margin-top: -40px;
+    border-radius: 34px 34px 0 0;
+  }
+
+  .about-champions-copy {
+    gap: 34px;
+  }
+
+  .about-champions-copy h2 {
+    font-size: 38px;
+  }
+
+  .about-champions-media {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .about-marquee {
+    flex-wrap: wrap;
+    min-height: 48px;
+    row-gap: 5px;
+    font-size: 12px;
+  }
+
+  .about-authorities {
+    padding-top: 72px;
+  }
+
+  .about-authority-logos {
+    gap: 34px;
+    margin-top: 44px;
+  }
+
+  .about-authority-logo {
+    min-height: 120px;
+  }
+
+  .world-taekwondo-logo,
+  .kukkiwon-logo {
+    max-width: 220px;
+  }
+
+  .dta-authority-logo {
+    max-width: 124px;
+    max-height: 124px;
+  }
+
+  .about-learn-heading {
+    margin-bottom: 42px;
+  }
+
+  .about-coach-grid {
+    gap: 48px;
+  }
+
+  .about-section-heading h2 {
+    font-size: 34px;
+  }
+
+  .about-training-heading {
+    margin-bottom: 36px;
+  }
+
+  .about-training-track {
+    gap: 0;
+  }
+
+  .about-training-card:not(:first-child) {
+    display: none;
+  }
+
+  .about-training-image {
+    margin-bottom: 14px;
+  }
+
+  .about-training-card h3 {
+    font-size: 17px;
+  }
+
+  .about-training-card p {
+    max-width: 100%;
+  }
+
+  .about-training-controls {
+    margin-top: 30px;
   }
 
   .legacy-copy,
@@ -1499,5 +2119,68 @@ h3 {
 
   .footer-bottom {
     gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-banner {
+    min-height: 590px;
+    padding-bottom: 92px;
+  }
+
+  .about-banner-content h1 {
+    font-size: 36px;
+  }
+
+  .about-banner-content p,
+  .about-champions-intro,
+  .about-section-heading p {
+    font-size: 12px;
+  }
+
+  .about-champions-copy h2,
+  .about-section-heading h2 {
+    font-size: 31px;
+  }
+
+  .about-champions-body {
+    font-size: 13px;
+  }
+
+  .about-goal-list span,
+  .about-coach-tags span {
+    min-height: 24px;
+    font-size: 11px;
+  }
+
+  .about-marquee {
+    justify-content: flex-start;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .about-coach-card p,
+  .about-training-card p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-banner-content,
+  .about-champions-copy,
+  .about-champions-media,
+  .about-marquee,
+  .about-section-heading,
+  .about-authority-logo,
+  .about-coach-card,
+  .about-training-card {
+    animation: none;
+  }
+
+  .about-authority-logo,
+  .about-coach-image,
+  .about-training-image img,
+  .about-training-controls button {
+    transition: none;
   }
 }
