@@ -1,5 +1,5 @@
-import grandMasterImage from "../../../assets/About/Image6.png";
-import headCoachImage from "../../../assets/About/Image7.png";
+import grandMasterImage from "../../assets/About/Image6.png";
+import headCoachImage from "../../assets/About/Image7.png";
 
 const coaches = [
   {

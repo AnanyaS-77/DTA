@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import taekwondoImage from "../../../assets/About/Image8.png";
-import selfDefenceImage from "../../../assets/About/Image9.jpg";
-import poomsaeImage from "../../../assets/About/Image10.jpg";
+import taekwondoImage from "../../assets/About/Image8.png";
+import selfDefenceImage from "../../assets/About/Image9.jpg";
+import poomsaeImage from "../../assets/About/Image10.jpg";
 
 const trainingCards = [
   {

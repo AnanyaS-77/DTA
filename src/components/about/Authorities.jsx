@@ -1,6 +1,6 @@
-import worldTaekwondoLogo from "../../../assets/About/Image3.png";
-import kukkiwonLogo from "../../../assets/About/Image4.png";
-import dtaLogo from "../../../assets/About/Image5.png";
+import worldTaekwondoLogo from "../../assets/About/Image3.png";
+import kukkiwonLogo from "../../assets/About/Image4.png";
+import dtaLogo from "../../assets/About/Image5.png";
 
 const authorities = [
   {

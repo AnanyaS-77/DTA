@@ -1,4 +1,4 @@
-import championsImage from "../../../assets/About/Image2.png";
+import championsImage from "../../assets/About/Image2.png";
 
 const goals = [
   "Self Defence",
