@@ -1,0 +1,102 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import championsImage from "@/public/assets/Home/Champions/Image.png";
+
+interface ChampionsProps {
+  title?: string;
+  subtitle?: string;
+  paragraphs?: string[];
+  ctaText?: string;
+  ctaHref?: string;
+  image?: any;
+  className?: string;
+}
+
+export default function Champions({
+  title = "Building Champions Since 2008",
+  subtitle = "Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years.",
+  paragraphs = [
+    "Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years.",
+    "Founded under the expert guidance of Grand Master H.L. Muthappa Huderi, a 7th Dan Black Belt and internationally recognized martial arts expert, our academy has trained over 10,000 students across Bangalore.",
+  ],
+  ctaText = "Read More",
+  ctaHref = "/about",
+  image = championsImage,
+  className = "",
+}: ChampionsProps) {
+  return (
+    <section
+      className={`w-full bg-white py-30 px-6 sm:px-12 md:px-20 flex justify-center ${className}`}
+    >
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-10 lg:gap-10 items-center lg:items-stretch">
+        {/* Left Column: Heading, Paragraphs, Read More */}
+        <div className="w-full lg:flex-1 flex flex-col justify-between items-start text-left gap-16">
+          {/* Header Block (Same as other sections) */}
+          <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
+            <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+              {title}
+            </h2>
+            <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
+              {subtitle}
+            </p>
+          </div>
+
+          {/* Paragraphs Block (Separated by my-16/64px spacer) */}
+          <div className="flex flex-col gap-4 text-lg text-primary leading-relaxed font-primary font-normal">
+            {paragraphs.map((p, idx) => (
+              <p key={idx}>{p}</p>
+            ))}
+          </div>
+
+          {/* CTA Link */}
+          <Link
+            href={ctaHref}
+            className="text-[18px] font-bold text-accent font-primary flex items-center gap-2.5 hover:opacity-80 transition-opacity underline underline-offset-4"
+          >
+            {ctaText}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <mask
+                id="mask0_317_679"
+                style={{ maskType: "alpha" }}
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="24"
+                height="24"
+              >
+                <rect width="24" height="24" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_317_679)">
+                <path
+                  d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z"
+                  fill="#D61F26"
+                />
+              </g>
+            </svg>
+          </Link>
+        </div>
+
+        {/* Right Column: Image */}
+        <div className="w-full lg:w-130.5 shrink-0 self-stretch relative rounded-2xl overflow-hidden min-h-100 lg:min-h-0">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 522px"
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
