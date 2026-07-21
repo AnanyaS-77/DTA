@@ -36,20 +36,20 @@ export default function Authority({
   logos = defaultLogos,
 }: AuthorityProps) {
   return (
-    <section className="w-full bg-white py-30 px-6 sm:px-12 md:px-20  flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col items-start gap-16">
+    <section className="w-full bg-white lg:py-30 px-5 py-14 sm:px-12 md:px-20  flex justify-center">
+      <div className="w-full max-w-7xl flex flex-col items-start gap-12 md:gap-16">
         {/* Header Block */}
         <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
-          <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+          <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             {title}
           </h2>
-          <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
+          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
             {subtitle}
           </p>
         </div>
 
         {/* Logos Container */}
-        <div className="w-full flex flex-col md:flex-row gap-6 md:gap-6 justify-between items-center">
+        <div className="w-full flex flex-col md:flex-row gap-12 md:gap-6 justify-between  items-center">
           {logos.map((logo, index) => (
             <div key={index} className="">
               <Image

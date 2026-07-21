@@ -5,13 +5,14 @@ import Image from "next/image";
 import logo from "../public/assets/Footer/logo1.webp";
 import logo1 from "../public/assets/Footer/logo2.webp";
 import footerBg from "../public/assets/Footer/Footer.webp";
+import footerRespBg from "../public/assets/Footer/Footer-resp.webp";
 
 export default function Footer() {
   return (
     <footer className="w-full text-white font-primary bg-white">
-      <div className="w-full bg-[#070707] rounded-t-[64px] py-30 px-6 sm:px-12 md:px-20 flex justify-center relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0 select-none pointer-events-none">
+      <div className="w-full bg-[#070707] rounded-t-[64px] lg:py-30 py-20 px-5 sm:px-12 md:px-20 flex justify-center relative overflow-hidden">
+        {/* Desktop Background Image */}
+        <div className="hidden lg:block absolute inset-0 z-0 select-none pointer-events-none">
           <Image
             src={footerBg}
             alt="Footer Background"
@@ -21,9 +22,20 @@ export default function Footer() {
           />
         </div>
 
+        {/* Responsive Mobile Background Image */}
+        <div className="lg:hidden absolute inset-0 z-0 select-none pointer-events-none">
+          <Image
+            src={footerRespBg}
+            alt="Footer Mobile Background"
+            fill
+            placeholder="blur"
+            className="object-cover object-center"
+          />
+        </div>
+
         <div className="w-full max-w-7xl flex flex-col relative z-10">
           {/* Row 1: Logo and Navigation Links */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="w-full flex flex-col md:flex-row justify-between items-center lg:gap-8 gap-11">
             {/* Logo Brand */}
             <Link href="/" className="flex items-center gap-1.5">
               <img
@@ -71,10 +83,10 @@ export default function Footer() {
           </div>
 
           {/* Divider Line (20px gap top and bottom) */}
-          <div className="w-full border-t border-secondary/10 my-5" />
+          <div className="w-full border-t border-secondary/10 lg:my-5 my-6" />
 
           {/* Row 2: Copyright, Social Icons, and Credits */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400">
+          <div className="w-full flex flex-col md:flex-row justify-between items-center lg:gap-6 text-zinc-400 gap-4">
             {/* Copyright */}
             <div>©2026 All rights reserved</div>
 

@@ -29,23 +29,35 @@ export default function Champions({
 }: ChampionsProps) {
   return (
     <section
-      className={`w-full bg-white py-30 px-6 sm:px-12 md:px-20 flex justify-center ${className}`}
+      className={`w-full bg-white lg:py-30 px-5 py-14 sm:px-12 md:px-20  flex justify-center ${className}`}
     >
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-10 lg:gap-10 items-center lg:items-stretch">
-        {/* Left Column: Heading, Paragraphs, Read More */}
-        <div className="w-full lg:flex-1 flex flex-col justify-between items-start text-left gap-16">
+        {/* Left Column: Heading, Mobile Image, Paragraphs, Read More */}
+        <div className="w-full lg:flex-1 flex flex-col justify-between items-start text-left md:gap-16 gap-8">
           {/* Header Block (Same as other sections) */}
           <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
-            <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+            <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               {title}
             </h2>
-            <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
+            <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
               {subtitle}
             </p>
           </div>
 
-          {/* Paragraphs Block (Separated by my-16/64px spacer) */}
-          <div className="flex flex-col gap-4 text-lg text-primary leading-relaxed font-primary font-normal">
+          {/* Mobile-only Image (Positioned right under header subtitle on responsive screens) */}
+          <div className="w-full relative rounded-2xl overflow-hidden aspect-4/3 min-h-64 sm:min-h-80 lg:hidden">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 522px"
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Paragraphs Block (Separated by spacer) */}
+          <div className="flex flex-col gap-4 md:text-lg text-primary leading-relaxed font-primary font-normal">
             {paragraphs.map((p, idx) => (
               <p key={idx}>{p}</p>
             ))}
@@ -85,8 +97,8 @@ export default function Champions({
           </Link>
         </div>
 
-        {/* Right Column: Image */}
-        <div className="w-full lg:w-130.5 shrink-0 self-stretch relative rounded-2xl overflow-hidden min-h-100 lg:min-h-0">
+        {/* Right Column: Image (Desktop only) */}
+        <div className="hidden lg:block w-full lg:w-130.5 shrink-0 self-stretch relative rounded-2xl overflow-hidden min-h-100 lg:min-h-0">
           <Image
             src={image}
             alt={title}

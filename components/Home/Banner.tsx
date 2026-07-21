@@ -27,7 +27,7 @@ export default function Banner({
   image = bannerImg,
 }: BannerProps) {
   return (
-    <section className="relative w-full overflow-hidden bg-primary h-[calc(100svh-4rem)] flex items-end ">
+    <section className="relative w-full overflow-hidden bg-primary min-h-[85svh] flex items-end">
       {/* Background Image & Overlays */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
@@ -40,34 +40,34 @@ export default function Banner({
         />
       </div>
 
-      {/* Bottom Horizontal Blur Transition (Caveman Mode High Intensity Stack) */}
-      <div className="absolute bottom-0 left-0 right-0 h-72 w-full bg-primary blur-[100px] z-5 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-64 w-full bg-primary blur-[100px] z-5 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-48 w-full bg-primary blur-[60px] z-5 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 w-full bg-primary blur-[30px] z-5 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-12 w-full bg-primary z-5 pointer-events-none" />
+      {/* Bottom Horizontal Blur Transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/2 md:h-64 lg:h-72 w-full bg-primary blur-[100px] z-5 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-[45%] md:h-56 lg:h-64 w-full bg-primary blur-[100px] z-5 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-[35%] md:h-40 lg:h-48 w-full bg-primary blur-[60px] z-5 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-[20%] md:h-28 lg:h-32 w-full bg-primary blur-[30px] z-5 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-8 md:h-12 w-full bg-primary z-5 pointer-events-none" />
 
       {/* Content Container */}
-      <div className="relative z-10 mx-0 pb-16 pl-20 flex flex-col items-start justify-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-6 lg:px-20 pb-12 sm:pb-16 lg:pb-20 flex flex-col items-start justify-center">
         <div className="max-w-2xl flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             {/* Main Headings */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[72px] font-bold tracking-[-1.44px] sm:tracking-[-1.92px] lg:tracking-[-2.88px] text-white leading-none font-sora">
+            <h1 className="text-[48px] lg:text-[72px] font-bold tracking-[-1.92px] lg:tracking-[-2.88px] text-white leading-[100%] font-sora">
               {title}
               {subtitle}
             </h1>
 
             {/* Subtext description */}
-            <p className=" text-lg text-zinc-300  font-normal leading-relaxed font-primary max-w-175">
+            <p className="text-[16px] sm:text-lg text-[#E7E7E7] font-normal leading-normal font-primary max-w-xl lg:max-w-175">
               {desc}
             </p>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 w-full sm:w-auto">
             <Link
               href={buttonHref}
-              className="group inline-flex items-center justify-center gap-2 bg-white text-[#111] font-bold px-6 py-4 rounded-lg text-lg hover:bg-accent hover:text-white transition-all duration-200 active:scale-[0.98] shadow-lg hover:shadow-xl font-primary"
+              className="group inline-flex items-center justify-center gap-2 bg-white text-[#111] font-bold px-6 py-3.5 sm:py-4 rounded-lg text-[18px] hover:bg-accent hover:text-white transition-all duration-200 active:scale-[0.98] shadow-lg hover:shadow-xl font-primary w-full max-w-83.75 sm:w-auto sm:max-w-none"
             >
               {buttonText}
               <svg
@@ -87,7 +87,7 @@ export default function Banner({
 
             <a
               href={`tel:${phone}`}
-              className="inline-flex items-center justify-center bg-white/20 hover:bg-[#FBE9E9] text-white hover:text-accent font-semibold p-4 rounded-lg border border-white/20 hover:border-accent transition-all duration-200 active:scale-[0.98] text-lg font-primary"
+              className="inline-flex items-center justify-center bg-white/20 hover:bg-[#FBE9E9] text-white hover:text-accent font-semibold p-3.5 sm:p-4 rounded-lg border border-white/20 hover:border-accent transition-all duration-200 active:scale-[0.98] text-[18px] font-primary w-full max-w-83.75 sm:w-auto sm:max-w-none"
             >
               {phoneText}
             </a>

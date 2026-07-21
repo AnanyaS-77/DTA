@@ -3594,11 +3594,11 @@ export default function Legacy() {
   return (
     <section className="w-full bg-[#111] flex flex-col lg:flex-row items-stretch">
       {/* Left Column: Our Legacy of Champions */}
-      <div className="w-full lg:w-1/2 bg-[#111] text-white p-20 flex flex-col justify-center items-end">
-        <div className="max-w-135 flex flex-col gap-16 w-full">
+      <div className="w-full lg:w-1/2 bg-[#111] text-white lg:p-20 flex flex-col justify-center items-end px-5 py-14">
+        <div className="lg:max-w-135 flex flex-col lg:gap-16 w-full gap-12">
           {/* Header Block (Standard Styles) */}
           <div className="flex flex-col items-start text-left gap-2">
-            <h2 className="text-[56px] font-bold text-white tracking-tight font-sora leading-[1.15]">
+            <h2 className="text-[36px] lg:text-[56px] font-bold text-white tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               Our Legacy of Champions
             </h2>
             <p className="text-md text-white-Secondary leading-relaxed font-primary font-normal">
@@ -3618,10 +3618,10 @@ export default function Legacy() {
                 </div>
                 {/* Text Content */}
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[18px] font-bold font-primary text-white leading-none">
+                  <h4 className="lg:text-lg font-bold font-primary text-white leading-none text-xl">
                     {item.title}
                   </h4>
-                  <p className="text-[14px] text-zinc-400 font-primary">
+                  <p className="lg:text-sm text-md text-zinc-400 font-primary">
                     {item.desc}
                   </p>
                 </div>
@@ -3633,15 +3633,15 @@ export default function Legacy() {
 
       {/* Right Column: Gradient Promo */}
       <div
-        className="w-full lg:w-1/2 p-5 flex flex-col justify-between items-start text-white min-h-125 lg:min-h-0 relative overflow-hidden  "
+        className="w-full lg:w-1/2 p-5 sm:p-10 flex flex-col justify-between items-start text-white min-h-125 lg:min-h-0 relative overflow-hidden"
         style={{
           background:
             "linear-gradient(216deg, #5A06BF 0%, #F23000 36.56%, #D30008 56.27%, #8D070D 100%)",
         }}
       >
         {/* Large overlay title */}
-        <div className="max-w-100 flex flex-col gap-4 z-10 my-auto">
-          <h3 className="text-[40px] font-bold font-sora leading-none text-[#FFF700] tracking-[-1.6px]">
+        <div className="max-w-100 flex flex-col gap-4 z-10 pt-14 lg:pt-0 lg:my-auto">
+          <h3 className="lg:text-[40px] text-[32px] font-bold font-sora leading-none text-[#FFF700] lg:tracking-[-1.6px]">
             100+ Medals. <br />
             <span className=" text-white">
               Countless <br />
@@ -3650,13 +3650,13 @@ export default function Legacy() {
           </h3>
         </div>
 
-        {/* Large Decorative Trophy image rendered at bottom right */}
-        <div className="">
+        {/* Large Decorative Trophy image */}
+        <div className="relative w-[448.49px] max-w-full h-auto aspect-53/80 rotate-[-4.793deg] pointer-events-none sm:self-end lg:absolute lg:inset-0 lg:w-full lg:h-full">
           <Image
             src={trophyImg}
             alt="Trophy"
             fill
-            className="object-contain object-bottom-right h-225.75 w-149.5 rotate-[-4.793deg]"
+            className="object-contain object-bottom-right"
           />
         </div>
       </div>

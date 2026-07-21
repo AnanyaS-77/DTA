@@ -172,15 +172,15 @@ const cardsData = [
 
 export default function Bangalore() {
   return (
-    <section className="w-full bg-white py-30 px-6 sm:px-12 md:px-20 flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col items-start gap-16">
+    <section className="w-full bg-white lg:py-30 px-5 py-14 sm:px-12 md:px-20  flex justify-center">
+      <div className="w-full max-w-7xl flex flex-col items-start md:gap-16 gap-12">
         {/* Header Block (Same as other sections) */}
         <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
-          <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+          <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             Why Families Across <br /> Bangalore Choose <br />
             Deccan Taekwondo Academy
           </h2>
-          <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-150">
+          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-150">
             From beginners to champions, we train kids, teens, adults, and
             professionals through expert Korean martial arts coaching and
             disciplined fitness programs.
@@ -188,14 +188,14 @@ export default function Bangalore() {
         </div>
 
         {/* Cards Grid */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-5 gap-2">
           {cardsData.map((card, idx) => (
             <div
               key={idx}
-              className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-lg p-4 flex flex-col items-start text-left w-76.25 gap-4 hover:border-[#EC989B] hover:bg-[#FBE9E9] transition-all duration-300"
+              className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-lg p-4 flex flex-col items-start text-left  gap-4 hover:border-[#EC989B] hover:bg-[#FBE9E9] transition-all duration-300"
             >
               {/* Dynamic SVG Icon */}
-              <div className="mb-4">{card.icon}</div>
+              <div className=" ">{card.icon}</div>
               <h3
                 className="text-xl font-bold font-sora text-primary leading-snug"
                 dangerouslySetInnerHTML={{ __html: card.title }}

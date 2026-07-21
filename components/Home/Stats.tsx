@@ -8,14 +8,14 @@ import image3 from "@/public/assets/Home/Stats/image 3.webp";
 export default function Stats() {
   return (
     <section className="w-full bg-black">
-      <div className="w-full bg-white py-30 px-6 sm:px-12 md:px-20 border-b border-zinc-100 rounded-t-[64px] justify-center flex">
-        <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-10 lg:gap-10 items-center lg:items-stretch">
+      <div className="w-full bg-white py-14 px-5 sm:px-12 md:px-20 md:py-30 border-b border-zinc-100 rounded-t-4xl sm:rounded-t-6xl justify-center flex">
+        <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-12 lg:gap-10 items-center lg:items-stretch">
           {/* Left Column: Heading and Subtext */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left gap-2 ">
-            <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+            <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               Bangalore’s Home for Modern Martial Arts
             </h2>
-            <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
+            <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
               From beginners to champions, we train kids, teens, adults, and
               professionals through expert Korean martial arts coaching and
               disciplined fitness programs.
@@ -25,7 +25,7 @@ export default function Stats() {
           {/* Right Column: Cards Grid */}
           <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Card 1: Medal Winning Academy */}
-            <div className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-[20px] flex flex-col items-start text-left gap-6.5 px-4 py-12 w-76.25 h-98.5">
+            <div className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-lg flex flex-col items-start text-left gap-6.5 md:px-4 md:py-12 px-4 py-2.5 w-auto md:h-98.5 ">
               {/* Premium Gold Medal Image */}
               <div className="flex">
                 <Image
@@ -45,7 +45,7 @@ export default function Stats() {
             {/* Column 2: Two Stacked Cards */}
             <div className="flex flex-col gap-5">
               {/* Card 2: Happy Students */}
-              <div className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-[20px] px-4 py-2.5 flex flex-col items-start w-76.25 h-46.75 gap-3.5">
+              <div className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-lg px-4 py-2.5 flex flex-col items-start lg:w-76.25 md:h-46.75 gap-3.5 w-full h-auto">
                 {/* Happy Student Image */}
                 <div className="mb-4">
                   <Image
@@ -64,7 +64,7 @@ export default function Stats() {
               </div>
 
               {/* Card 3: Location */}
-              <div className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-[20px] px-4 py-2.5 flex flex-col items-start w-76.25 h-46.75 gap-3.5">
+              <div className="bg-[#F9F9F9] border border-[#D6D6D6] rounded-lg px-4 py-2.5 flex flex-col items-start lg:w-76.25 md:h-46.75 gap-3.5 w-full h-auto">
                 {/* Location/Building Image */}
                 <div className="mb-4">
                   <Image

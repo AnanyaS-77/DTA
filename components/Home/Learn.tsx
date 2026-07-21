@@ -51,27 +51,27 @@ export default function Learn({
   coaches = coachesData,
 }: LearnProps) {
   return (
-    <section className="w-full bg-white py-30 px-6 sm:px-12 md:px-20 border-b border-zinc-100 flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col items-start gap-16">
+    <section className="w-full bg-white lg:py-30 py-14 px-5 sm:px-12 md:px-20 border-b border-zinc-100 flex justify-center">
+      <div className="w-full max-w-7xl flex flex-col items-start lg:gap-16 gap-12">
         {/* Header Block (Same as HomeChampions) */}
         <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
-          <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+          <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             {title}
           </h2>
-          <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-150">
+          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-150">
             {subtitle}
           </p>
         </div>
 
         {/* Coaches Grid */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 ">
+        <div className="w-full grid lg:grid-cols-2 lg:gap-5 gap-12">
           {coaches.map((coach, idx) => (
             <div
               key={idx}
               className="flex flex-col items-center text-center gap-5"
             >
               {/* Image Container with explicit dimensions: width 414px, height 445px */}
-              <div className="w-103.5 h-111.25 relative rounded-[20px] overflow-hidden border border-[#D6D6D6] bg-[#F2F2F2]">
+              <div className="w-full h-auto aspect-414/445 md:w-103.5 md:h-111.25 relative rounded-2xl overflow-hidden border border-[#D6D6D6] bg-[#F2F2F2]">
                 <Image
                   src={coach.image}
                   alt={coach.name}
@@ -82,11 +82,11 @@ export default function Learn({
               </div>
 
               {/* Profile Details Container */}
-              <div className="flex flex-col items-center text-center gap-6">
+              <div className="flex flex-col items-center text-center md:gap-6 gap-2">
                 {/* Info Text Block (8px gap) */}
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-center gap-2 w-full">
                   {/* Coach Name */}
-                  <h3 className="text-[24px] font-bold font-sora text-primary">
+                  <h3 className="md:text-6 font-bold font-sora text-primary text-xl">
                     {coach.name}
                   </h3>
 
@@ -311,7 +311,7 @@ export default function Learn({
                 </div>
 
                 {/* Description */}
-                <p className="text-lg text-primary leading-relaxed font-primary font-medium ">
+                <p className="lg:text-lg text-primary leading-relaxed font-primary font-medium ">
                   {coach.desc}
                 </p>
               </div>

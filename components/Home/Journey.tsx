@@ -27,7 +27,7 @@ export default function Journey({
 }: JourneyProps) {
   return (
     <section
-      className="w-full py-24 px-6 sm:px-12 md:px-20 flex justify-center items-center text-center relative overflow-hidden"
+      className="w-full py-44 lg:py-24 px-5 sm:px-12 md:px-20 flex justify-center items-center text-center relative overflow-hidden"
       style={{
         background: "linear-gradient(270deg, #0F0F0F -0.46%, #000 99.93%)",
       }}
@@ -73,7 +73,7 @@ export default function Journey({
 
       <div className="w-full max-w-7xl flex flex-col items-center justify-center relative z-10">
         {/* Same exact div structure requested */}
-        <div className="max-w-2xl flex flex-col gap-5 items-center">
+        <div className=" flex flex-col gap-5 items-center">
           <div className="flex flex-col gap-4 items-center">
             {/* Main Headings */}
             <h2 className="text-4xl sm:text-5xl lg:text-[64px] font-bold tracking-[-2.24px] text-white leading-tight font-sora">
@@ -87,10 +87,10 @@ export default function Journey({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2  w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
             <Link
               href={buttonHref}
-              className="group inline-flex items-center justify-center gap-2 bg-white text-[#111] font-bold px-6 py-4 rounded-lg text-lg hover:bg-accent hover:text-white transition-all duration-200 active:scale-[0.98] shadow-lg hover:shadow-xl font-primary"
+              className="group inline-flex items-center justify-center gap-2 bg-white text-[#111] font-bold px-6 py-4 rounded-lg text-lg hover:bg-accent hover:text-white transition-all duration-200 active:scale-[0.98] shadow-lg hover:shadow-xl font-primary w-full max-w-83.75 sm:w-auto sm:max-w-none"
             >
               {buttonText}
               <svg
@@ -110,7 +110,7 @@ export default function Journey({
 
             <a
               href={`tel:${phone}`}
-              className="inline-flex items-center justify-center bg-white/20 hover:bg-[#FBE9E9] text-white hover:text-accent font-semibold p-4 rounded-lg border border-white/20 hover:border-accent transition-all duration-200 active:scale-[0.98] text-lg font-primary"
+              className="inline-flex items-center justify-center bg-white/20 hover:bg-[#FBE9E9] text-white hover:text-accent font-semibold p-4 rounded-lg border border-white/20 hover:border-accent transition-all duration-200 active:scale-[0.98] text-lg font-primary w-full max-w-83.75 sm:w-auto sm:max-w-none"
             >
               {phoneText}
             </a>

@@ -8,6 +8,7 @@ import logo1 from "../public/assets/DTA logo1.webp";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileBatchOpen, setMobileBatchOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
@@ -17,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-16 px-20 justify-between align-center border-b border-zinc-100">
+      <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-16 px-4 sm:px-8 md:px-12 lg:px-20 justify-between items-center border-b border-zinc-100">
         <div className="flex h-16 items-center justify-between w-full relative">
           {/* Logo */}
           <div className="shrink-0">
@@ -237,10 +238,10 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-        {/* Mobile Drawer Menu */}
+        {/* Mobile Full-Screen White Drawer */}
         {isOpen && (
-          <div className="md:hidden border-t border-zinc-200/40 dark:border-zinc-800/40 bg-white dark:bg-zinc-950 transition-all duration-300">
-            <div className="space-y-1 px-4 py-3">
+          <div className="fixed top-16 left-0 right-0 bottom-0 h-[calc(100dvh-4rem)] bg-white z-50 flex flex-col justify-between p-6 md:hidden overflow-y-auto border-t border-zinc-100 animate-in fade-in duration-200">
+            <div className="flex flex-col gap-3">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -248,10 +249,10 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center rounded-lg px-3 py-2 text-base font-medium transition-all duration-200 ${
+                    className={`flex items-center px-4 py-3 text-lg font-semibold rounded-xl transition-all duration-200 ${
                       isActive
-                        ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:text-indigo-400"
-                        : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white"
+                        ? "bg-accent/10 text-accent font-bold"
+                        : "text-primary hover:bg-zinc-50 hover:text-accent font-primary"
                     }`}
                   >
                     {link.name}
@@ -259,48 +260,17 @@ export default function Navbar() {
                 );
               })}
 
-              {/* Mobile Batch Timings sub-info */}
-              <div className="px-3 py-2 border-t border-zinc-100 mt-2">
-                <span className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">
-                  Batch Timings
-                </span>
-                <div className="space-y-2 pl-2">
-                  <div className="text-sm">
-                    <span className="font-semibold block text-zinc-700">
-                      Morning Batch:
-                    </span>
-                    <span className="text-xs text-zinc-500">
-                      6:00 AM - 8:00 AM
-                    </span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold block text-zinc-700">
-                      Evening Batch:
-                    </span>
-                    <span className="text-xs text-zinc-500">
-                      4:00 PM - 6:00 PM
-                    </span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold block text-zinc-700">
-                      Weekend Special:
-                    </span>
-                    <span className="text-xs text-zinc-500">
-                      9:00 AM - 12:00 PM
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 pb-2 border-t border-zinc-100 dark:border-zinc-900 mt-3">
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full text-sm font-semibold text-white shadow-md shadow-red-600/10 hover:opacity-90 active:scale-95 transition-all flex items-center justify-center h-12 p-4 gap-2.5 rounded-(--CR-Medium,8px) bg-accent backdrop-blur-[20px]"
+              {/* Mobile Batch Timings Tab */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-zinc-100 bg-zinc-50/50">
+                <button
+                  onClick={() => setMobileBatchOpen(!mobileBatchOpen)}
+                  className="flex items-center justify-between w-full px-4 py-3 text-lg font-semibold text-primary hover:text-accent font-primary"
                 >
-                  Talk to Us
+                  <span>Batch Timings</span>
                   <svg
-                    className="h-4 w-4"
+                    className={`h-5 w-5 transition-transform duration-200 text-zinc-400 ${
+                      mobileBatchOpen ? "rotate-180 text-accent" : ""
+                    }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="2.5"
@@ -309,11 +279,94 @@ export default function Navbar() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                     />
                   </svg>
-                </Link>
+                </button>
+
+                {mobileBatchOpen && (
+                  <div className="px-4 pb-4 pt-1 flex flex-col gap-4 text-left border-t border-zinc-100 bg-white">
+                    {/* Section 1 */}
+                    <div className="flex flex-col gap-1 border-b border-zinc-100 pb-3">
+                      <h4 className="text-base font-semibold text-accent font-primary">
+                        Adult Fitness Classes
+                      </h4>
+                      <p className="text-xs text-secondary font-primary">
+                        Includes cardio, light weight gym, weight loss training
+                        & functional fitness
+                      </p>
+                      <p className="text-sm font-semibold text-primary font-primary mt-1">
+                        07:00 AM – 09:00 AM
+                      </p>
+                    </div>
+
+                    {/* Section 2 */}
+                    <div className="flex flex-col gap-1 border-b border-zinc-100 pb-3">
+                      <h4 className="text-base font-semibold text-accent font-primary">
+                        Taekwondo Classes
+                      </h4>
+                      <p className="text-xs text-secondary font-primary">
+                        Morning batch for all ages
+                      </p>
+                      <p className="text-sm font-semibold text-primary font-primary mt-1">
+                        06:00 AM – 07:00 AM
+                      </p>
+                    </div>
+
+                    {/* Section 3 */}
+                    <div className="flex flex-col gap-1">
+                      <h4 className="text-base font-semibold text-accent font-primary">
+                        Evening Batch Classes
+                      </h4>
+                      <p className="text-xs text-secondary font-primary mb-1">
+                        Suitable for kids, teens, adults, & working
+                        professionals
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 text-xs font-semibold text-primary font-primary">
+                        <span className="bg-zinc-100 px-2 py-1 rounded">
+                          03:00 PM – 04:00 PM
+                        </span>
+                        <span className="bg-zinc-100 px-2 py-1 rounded">
+                          04:00 PM – 05:00 PM
+                        </span>
+                        <span className="bg-zinc-100 px-2 py-1 rounded">
+                          05:00 PM – 06:00 PM
+                        </span>
+                        <span className="bg-zinc-100 px-2 py-1 rounded">
+                          06:00 PM – 07:00 PM
+                        </span>
+                        <span className="bg-zinc-100 px-2 py-1 rounded">
+                          07:00 PM – 08:00 PM
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
+            </div>
+
+            {/* Bottom Talk To Us CTA */}
+            <div className="border-t border-zinc-100 mt-auto">
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-base font-bold text-white shadow-md shadow-red-600/10 hover:opacity-90 active:scale-95 transition-all flex items-center justify-center h-12 p-4 gap-2.5 rounded-lg bg-accent backdrop-blur-[20px] font-primary"
+              >
+                Talk to Us
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         )}

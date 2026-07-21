@@ -76,9 +76,9 @@ function HoverRow({ item, idx }: { item: ProgramItem; idx: number }) {
       </div>
 
       {/* Text Content */}
-      <div className="flex flex-col gap-4 justify-center pl-6">
+      <div className="flex flex-col lg:gap-4 gap-2 justify-center pl-6">
         <h3
-          className="text-2xl font-bold font-primary leading-tight transition-colors duration-300"
+          className="lg:text-2xl font-bold font-primary leading-tight transition-colors duration-300 text-xl"
           style={{ color: hovered ? "#d61f26" : "#111111" }}
         >
           {item.title}
@@ -105,15 +105,15 @@ export default function Programs({
 }: ProgramsProps) {
   return (
     <section
-      className={`w-full bg-white py-30 px-6 sm:px-12 md:px-20 border-t border-zinc-100 flex justify-center ${className}`}
+      className={`w-full bg-white lg:py-30 py-14 px-5 sm:px-12 md:px-20 border-t border-zinc-100 flex justify-center  ${className}`}
     >
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row lg:justify-between items-center">
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row lg:justify-between items-center gap-12">
         {/* Left Column: Heading & Subtitle */}
         <div className="flex flex-col gap-2 text-left w-full lg:w-[40.625%]">
-          <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+          <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             {title}
           </h2>
-          <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
+          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
             {subtitle}
           </p>
         </div>

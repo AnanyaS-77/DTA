@@ -38,25 +38,17 @@ export default function ContactBanner() {
       style={{ maxWidth: "1440px" }}
     >
       {/* Left Panel – Form */}
-      <div
-        className="w-full lg:w-1/2 bg-white flex flex-col"
-        style={{
-          paddingLeft: "80px",
-          paddingTop: "63px",
-          paddingRight: "47px",
-          paddingBottom: "63px",
-        }}
-      >
-        <div className="w-full  flex flex-col" style={{ gap: "45px" }}>
+      <div className="w-full lg:w-1/2 bg-white flex flex-col py-14 px-5 sm:px-12 md:px-16 lg:py-15.75 lg:pl-20 lg:pr-11.75">
+        <div className="w-full flex flex-col md:gap-11.25 gap-8">
           {/* Header Block */}
           <div className="flex flex-col gap-2">
             {/* Heading */}
-            <h1 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+            <h1 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               Get In Touch
               <br />
               With Us
             </h1>
-            <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
+            <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
               Have questions about classes, timings, or admissions?
               <br />
               Our team is here to help you begin your martial arts journey.
@@ -212,8 +204,8 @@ export default function ContactBanner() {
         </div>
       </div>
 
-      {/* Right Panel – Image: self-stretch matches left panel height */}
-      <div className="relative w-full lg:w-1/2 min-h-100 lg:min-h-0 self-stretch mb-16">
+      {/* Right Panel – Image */}
+      <div className="relative w-full lg:w-1/2 min-h-75 sm:min-h-100 lg:min-h-0 self-stretch">
         <Image
           src={contactBannerImg}
           alt="Deccan Taekwondo Academy Martial Artist"

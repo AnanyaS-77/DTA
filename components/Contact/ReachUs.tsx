@@ -107,14 +107,14 @@ export default function ReachUs() {
   ];
 
   return (
-    <section className="w-full bg-white pt-30 pb-30 px-6 sm:px-12 md:px-20 flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col gap-20">
+    <section className="w-full bg-white lg:py-30 py-14 px-5 sm:px-12 md:px-20 flex justify-center">
+      <div className="w-full max-w-7xl flex flex-col lg:gap-20 gap-12">
         {/* Header Block */}
         <div className="flex flex-col gap-2">
-          <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+          <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             How to Reach Us
           </h2>
-          <p className="text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
+          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
             For over 18 years, Deccan Taekwondo Academy has helped children,
             teenagers, adults, and families transform their lives through
             martial arts.

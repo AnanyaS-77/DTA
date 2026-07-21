@@ -108,13 +108,13 @@ export default function MartialArts({
   };
 
   return (
-    <section className="w-full bg-white py-30 border-zinc-100 flex flex-col gap-16 overflow-hidden">
+    <section className="w-full bg-white lg:py-30 py-14 flex flex-col gap-16 overflow-hidden">
       {/* Header Block: Aligned with the standard max-w-7xl margins */}
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left gap-2">
-        <h2 className="text-[56px] font-bold text-primary tracking-tight font-sora leading-[1.15]">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left gap-2 px-5 sm:px-12 md:px-20">
+        <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
           {title}
         </h2>
-        <p className="text-md  w-full text-secondary leading-relaxed font-primary font-normal max-w-150">
+        <p className="text-[14px] lg:text-md w-full text-secondary leading-relaxed font-primary font-normal max-w-150">
           {subtitle}
         </p>
       </div>
@@ -122,7 +122,7 @@ export default function MartialArts({
       {/* Slider Container: Starts aligned with the container margin on left, but runs to 100% viewport width on right */}
       <div
         ref={containerRef}
-        className="w-full flex flex-col gap-6 overflow-visible relative pr-20"
+        className="w-full flex flex-col gap-6 overflow-visible relative lg:pr-20 pr-0"
         style={{
           paddingLeft: "max(0px, calc((100% - 1280px) / 2))",
         }}
@@ -130,7 +130,7 @@ export default function MartialArts({
         {/* Inner Cards flex container */}
         <div
           ref={trackRef}
-          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px]"
+          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px] pl-5 sm:pl-12 md:pl-20 lg:pl-0"
           style={{
             left: `-${scrollX}px`,
           }}
@@ -152,10 +152,10 @@ export default function MartialArts({
               </div>
               {/* Content Wrapper */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-bold font-primary text-primary leading-tight">
+                <h3 className="lg:text-2xl text-xl font-bold font-primary text-primary leading-tight">
                   {program.title}
                 </h3>
-                <p className="text-lg text-secondary leading-relaxed font-primary font-medium">
+                <p className="lg:text-lg text-md text-secondary leading-relaxed font-primary font-medium">
                   {program.desc}
                 </p>
               </div>
@@ -163,13 +163,8 @@ export default function MartialArts({
           ))}
         </div>
 
-        {/* Navigation Arrows at Bottom Center (aligned with standard layout offset) */}
-        <div
-          className="flex justify-center items-center gap-1"
-          style={{
-            paddingRight: "max(0px, calc((100% - 1280px) / 2))",
-          }}
-        >
+        {/* Navigation Arrows at Bottom Center (centered on mobile, layout-aligned on desktop) */}
+        <div className="w-full flex justify-center items-center gap-1 lg:pr-20">
           <button
             onClick={handlePrev}
             disabled={scrollX <= 0}
