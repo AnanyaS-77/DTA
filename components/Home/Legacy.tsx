@@ -2,8 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import trophyImg from "@/public/assets/Home/Legacy/trophy.png";
-import indianFlagImg from "@/public/assets/Home/Legacy/india.png";
+import trophyImg from "@/public/assets/Home/Legacy/trophy.webp";
+import indianFlagImg from "@/public/assets/Home/Legacy/india.webp";
 const legacyAchievements = [
   {
     title: "Multiple Gold Medal Winners",

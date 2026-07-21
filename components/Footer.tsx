@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/assets/Footer/logo1.png";
-import logo1 from "../public/assets/Footer/logo2.png";
-import footerBg from "../public/assets/Footer/Footer.png";
+import logo from "../public/assets/Footer/logo1.webp";
+import logo1 from "../public/assets/Footer/logo2.webp";
+import footerBg from "../public/assets/Footer/Footer.webp";
 
 export default function Footer() {
   return (

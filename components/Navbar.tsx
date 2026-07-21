@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "../public/assets/DTA logo.png";
-import logo1 from "../public/assets/DTA logo1.png";
+import logo from "../public/assets/DTA logo.webp";
+import logo1 from "../public/assets/DTA logo1.webp";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);

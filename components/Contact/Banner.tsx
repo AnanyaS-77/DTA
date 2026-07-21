@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import contactBannerImg from "@/public/assets/Contact/Image.png";
+import contactBannerImg from "@/public/assets/Contact/Image.webp";
 
 export default function ContactBanner() {
   const [formData, setFormData] = useState({

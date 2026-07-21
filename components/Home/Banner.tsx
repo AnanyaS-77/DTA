@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import bannerImg from "@/public/assets/Home/Banner/Banner.png";
+import bannerImg from "@/public/assets/Home/Banner/Banner.webp";
 
 interface BannerProps {
   title?: React.ReactNode;

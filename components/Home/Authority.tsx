@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import logo1 from "@/public/assets/Home/Authorities/Rectangle 46.png";
-import logo2 from "@/public/assets/Home/Authorities/Rectangle 47.png";
-import logo3 from "@/public/assets/Home/Authorities/Rectangle 49.png";
+import logo1 from "@/public/assets/Home/Authorities/Rectangle 46.webp";
+import logo2 from "@/public/assets/Home/Authorities/Rectangle 47.webp";
+import logo3 from "@/public/assets/Home/Authorities/Rectangle 49.webp";
 
 interface LogoItem {
   src: any;

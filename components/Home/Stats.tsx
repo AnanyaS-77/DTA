@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import image1 from "@/public/assets/Home/Stats/image 1.png";
-import image2 from "@/public/assets/Home/Stats/image 2.png";
-import image3 from "@/public/assets/Home/Stats/image 3.png";
+import image1 from "@/public/assets/Home/Stats/image 1.webp";
+import image2 from "@/public/assets/Home/Stats/image 2.webp";
+import image3 from "@/public/assets/Home/Stats/image 3.webp";
 
 export default function Stats() {
   return (

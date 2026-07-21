@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import championsImage from "@/public/assets/Home/Champions/Image.png";
+import championsImage from "@/public/assets/Home/Champions/Image.webp";
 
 interface ChampionsProps {
   title?: string;

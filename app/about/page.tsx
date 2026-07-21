@@ -8,7 +8,7 @@ import MartialArts from "@/components/Home/MartialArts";
 import Journey from "@/components/Home/Journey";
 import Moments from "@/components/Home/Moments";
 import Testimonial from "@/components/Home/Testimonial";
-import aboutBannerImg from "@/public/assets/About/AboutBanner.png";
+import aboutBannerImg from "@/public/assets/About/AboutBanner.webp";
 
 export default function About() {
   return (
