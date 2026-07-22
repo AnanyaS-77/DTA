@@ -172,7 +172,7 @@ const cardsData = [
 
 export default function Bangalore() {
   return (
-    <section className="w-full bg-white lg:py-30 px-5 py-14 sm:px-12 md:px-20  flex justify-center">
+    <section className="w-full bg-white py-14 px-5 lg:py-30 lg:px-20 flex justify-center">
       <div className="w-full max-w-7xl flex flex-col items-start md:gap-16 gap-12">
         {/* Header Block (Same as other sections) */}
         <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
@@ -180,7 +180,7 @@ export default function Bangalore() {
             Why Families Across <br /> Bangalore Choose <br />
             Deccan Taekwondo Academy
           </h2>
-          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-150">
+          <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-150">
             From beginners to champions, we train kids, teens, adults, and
             professionals through expert Korean martial arts coaching and
             disciplined fitness programs.

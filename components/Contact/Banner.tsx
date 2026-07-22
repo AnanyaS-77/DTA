@@ -34,11 +34,11 @@ export default function ContactBanner() {
 
   return (
     <section
-      className="w-full mx-auto flex flex-col lg:flex-row font-primary"
+      className="w-full mx-auto flex flex-col lg:flex-row font-primary min-h-[calc(100vh-4rem)]"
       style={{ maxWidth: "1440px" }}
     >
       {/* Left Panel – Form */}
-      <div className="w-full lg:w-1/2 bg-white flex flex-col py-14 px-5 sm:px-12 md:px-16 lg:py-15.75 lg:pl-20 lg:pr-11.75">
+      <div className="w-full lg:w-1/2 bg-white flex flex-col py-14 px-5 lg:py-20 lg:px-20">
         <div className="w-full flex flex-col md:gap-11.25 gap-8">
           {/* Header Block */}
           <div className="flex flex-col gap-2">
@@ -48,7 +48,7 @@ export default function ContactBanner() {
               <br />
               With Us
             </h1>
-            <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
+            <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-125">
               Have questions about classes, timings, or admissions?
               <br />
               Our team is here to help you begin your martial arts journey.
@@ -205,14 +205,14 @@ export default function ContactBanner() {
       </div>
 
       {/* Right Panel – Image */}
-      <div className="relative w-full lg:w-1/2 min-h-75 sm:min-h-100 lg:min-h-0 self-stretch">
+      <div className="relative w-full sm:max-w-none md:max-w-none h-132 aspect-49/69 mx-auto lg:w-1/2 lg:max-w-none lg:h-auto lg:aspect-auto self-stretch">
         <Image
           src={contactBannerImg}
           alt="Deccan Taekwondo Academy Martial Artist"
           fill
           priority
           placeholder="blur"
-          className="object-cover"
+          className="object-cover h-full w-full"
         />
       </div>
     </section>

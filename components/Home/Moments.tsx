@@ -220,7 +220,7 @@ export default function Moments({
   columns = defaultColumns,
 }: MomentsProps) {
   return (
-    <section className="w-full bg-white lg:py-30 py-14 px-5 sm:px-12 md:px-20 flex justify-center">
+    <section className="w-full bg-white py-14 px-5 lg:py-30 lg:px-20 flex justify-center">
       <div className="w-full max-w-7xl flex flex-col lg:gap-16 gap-12">
         {/* Scoped CSS to hide scrollbar */}
         <style>{`
@@ -234,28 +234,28 @@ export default function Moments({
         `}</style>
 
         {/* Header Block */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-center  gap-6 text-left">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start  gap-6 text-left">
           <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.1] sm:self-start">
             {title}
           </h2>
-          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-150 sm:self-start">
+          <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-150 sm:self-start">
             {subtitle}
           </p>
         </div>
 
-        {/* Mobile View: 5 columns with custom widths (69px, 57px, 56px, 69px, 69px) & custom padding-top */}
-        <div className="w-full flex lg:hidden gap-2 overflow-x-auto hide-scrollbar">
+        {/* Mobile & Tablet View (< 1024px): 5 columns scaling dynamically across mobile, sm, and md tablet screens */}
+        <div className="w-full flex lg:hidden gap-2 sm:gap-3 md:gap-4 justify-between overflow-x-auto hide-scrollbar">
           {mobileColumns.map((col, colIdx) => (
             <div
               key={colIdx}
-              className="flex flex-col gap-2 h-full shrink-0"
-              style={{ paddingTop: `${col.pt}px`, width: `${col.w}px` }}
+              className="flex flex-col gap-2 sm:gap-3 flex-1 min-w-14 sm:min-w-25 md:min-w-30 h-full shrink-0 sm:shrink"
+              style={{ paddingTop: `${col.pt}px` }}
             >
               {col.cards.map((card, cardIdx) => (
                 <div
                   key={cardIdx}
-                  className="w-full relative rounded-md overflow-hidden bg-zinc-100 shrink-0"
-                  style={{ height: `${card.height}px` }}
+                  className="w-full relative rounded-md sm:rounded-lg overflow-hidden bg-zinc-100 shrink-0"
+                  style={{ aspectRatio: `${col.w} / ${card.height}` }}
                 >
                   <Image
                     src={card.img}

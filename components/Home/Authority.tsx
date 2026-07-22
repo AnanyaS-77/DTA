@@ -36,14 +36,14 @@ export default function Authority({
   logos = defaultLogos,
 }: AuthorityProps) {
   return (
-    <section className="w-full bg-white lg:py-30 px-5 py-14 sm:px-12 md:px-20  flex justify-center">
+    <section className="w-full bg-white py-14 px-5 lg:py-30 lg:px-20 flex justify-center">
       <div className="w-full max-w-7xl flex flex-col items-start gap-12 md:gap-16">
         {/* Header Block */}
         <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
           <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             {title}
           </h2>
-          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
+          <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-135">
             {subtitle}
           </p>
         </div>

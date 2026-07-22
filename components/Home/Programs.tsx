@@ -105,7 +105,7 @@ export default function Programs({
 }: ProgramsProps) {
   return (
     <section
-      className={`w-full bg-white lg:py-30 py-14 px-5 sm:px-12 md:px-20 border-t border-zinc-100 flex justify-center  ${className}`}
+      className={`w-full bg-white py-14 px-5 lg:py-30 lg:px-20 border-t border-zinc-100 flex justify-center ${className}`}
     >
       <div className="w-full max-w-7xl flex flex-col lg:flex-row lg:justify-between items-center gap-12">
         {/* Left Column: Heading & Subtitle */}
@@ -113,7 +113,7 @@ export default function Programs({
           <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
             {title}
           </h2>
-          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-125">
+          <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-125">
             {subtitle}
           </p>
         </div>

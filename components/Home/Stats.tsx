@@ -8,14 +8,14 @@ import image3 from "@/public/assets/Home/Stats/image 3.webp";
 export default function Stats() {
   return (
     <section className="w-full bg-black">
-      <div className="w-full bg-white py-14 px-5 sm:px-12 md:px-20 md:py-30 border-b border-zinc-100 rounded-t-4xl sm:rounded-t-6xl justify-center flex">
+      <div className="w-full bg-white py-14 px-5 lg:py-30 lg:px-20 border-b border-zinc-100 lg:rounded-t-[64px] rounded-t-[36px] justify-center flex">
         <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-12 lg:gap-10 items-center lg:items-stretch">
           {/* Left Column: Heading and Subtext */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left gap-2 ">
             <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               Bangalore’s Home for Modern Martial Arts
             </h2>
-            <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-135">
+            <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-135">
               From beginners to champions, we train kids, teens, adults, and
               professionals through expert Korean martial arts coaching and
               disciplined fitness programs.

@@ -27,7 +27,7 @@ export default function Journey({
 }: JourneyProps) {
   return (
     <section
-      className="w-full py-44 lg:py-24 px-5 sm:px-12 md:px-20 flex justify-center items-center text-center relative overflow-hidden"
+      className="w-full py-44 px-5 lg:py-93 lg:px-52 flex justify-center items-center text-center relative overflow-hidden"
       style={{
         background: "linear-gradient(270deg, #0F0F0F -0.46%, #000 99.93%)",
       }}

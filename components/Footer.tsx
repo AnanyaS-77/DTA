@@ -10,7 +10,7 @@ import footerRespBg from "../public/assets/Footer/Footer-resp.webp";
 export default function Footer() {
   return (
     <footer className="w-full text-white font-primary bg-white">
-      <div className="w-full bg-[#070707] rounded-t-[64px] lg:py-30 py-20 px-5 sm:px-12 md:px-20 flex justify-center relative overflow-hidden">
+      <div className="w-full bg-[#070707] rounded-t-[64px] py-14 px-5 lg:py-30 lg:px-20 flex justify-center relative overflow-hidden">
         {/* Desktop Background Image */}
         <div className="hidden lg:block absolute inset-0 z-0 select-none pointer-events-none">
           <Image

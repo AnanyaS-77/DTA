@@ -99,9 +99,9 @@ export default function Testimonial({
   };
 
   return (
-    <section className="w-full bg-white lg:pt-30 lg:pb-19 py-14 border-zinc-100 flex flex-col lg:gap-16 gap-12 overflow-hidden">
+    <section className="w-full bg-white py-14 px-5 lg:py-30 lg:px-20 border-zinc-100 flex flex-col gap-12 md:gap-16 overflow-hidden">
       {/* Header Block: Aligned with the standard max-w-7xl margins */}
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left gap-2 px-5 sm:px-12 md:px-20">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left gap-2">
         <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
           {title}
         </h2>
@@ -121,7 +121,7 @@ export default function Testimonial({
         {/* Inner Cards flex container */}
         <div
           ref={trackRef}
-          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px] pr-20 pl-5 sm:pl-12 md:pl-20 lg:pl-0"
+          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px] pr-20 pl-5 lg:pl-0"
           style={{
             left: `-${scrollX}px`,
           }}

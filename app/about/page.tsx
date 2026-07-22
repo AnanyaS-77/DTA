@@ -6,9 +6,10 @@ import AudienceBanner from "@/components/Home/AudienceBanner";
 import Learn from "@/components/Home/Learn";
 import MartialArts from "@/components/Home/MartialArts";
 import Journey from "@/components/Home/Journey";
+import Timings from "@/components/Home/Timings";
 import Moments from "@/components/Home/Moments";
 import Testimonial from "@/components/Home/Testimonial";
-import aboutBannerImg from "@/public/assets/About/AboutBanner.webp";
+import aboutBannerImg from "@/public/assets/About/AboutBanner.jpg";
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
         image={aboutBannerImg}
       />
       <Champions
-        className="rounded-t-[64px]"
+        className="lg:rounded-t-[64px] rounded-t-[36px]"
         subtitle="Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years."
         paragraphs={[
           "Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years.",
@@ -34,6 +35,7 @@ export default function About() {
       <Learn />
       <MartialArts />
       <Journey />
+      <Timings />
       <Moments />
       <Testimonial />
     </div>

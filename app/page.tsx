@@ -9,6 +9,7 @@ import Bangalore from "@/components/Home/Bangalore";
 import Learn from "@/components/Home/Learn";
 import Legacy from "@/components/Home/Legacy";
 import Journey from "@/components/Home/Journey";
+import Timings from "@/components/Home/Timings";
 import Moments from "@/components/Home/Moments";
 import Testimonial from "@/components/Home/Testimonial";
 import Programs from "@/components/Home/Programs";
@@ -25,8 +26,9 @@ export default function Home() {
       <Learn />
       <Legacy />
       <Programs />
-      <Journey />
       <MartialArts />
+      <Journey />
+      <Timings />
       <Moments />
       <Testimonial />
     </div>

@@ -27,16 +27,16 @@ export default function Banner({
   image = bannerImg,
 }: BannerProps) {
   return (
-    <section className="relative w-full overflow-hidden bg-primary min-h-[85svh] flex items-end">
+    <section className="relative w-full overflow-hidden bg-primary min-h-[calc(100svh-4rem)] flex items-end">
       {/* Background Image & Overlays */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+      <div className="absolute inset-0 h-full w-full z-0 select-none pointer-events-none">
         <Image
           src={image}
           alt="Deccan Taekwondo Academy Sparring"
           fill
           priority
           placeholder={image === bannerImg ? "blur" : undefined}
-          className="object-cover object-center"
+          className="object-cover object-center h-full w-full"
         />
       </div>
 
@@ -48,11 +48,11 @@ export default function Banner({
       <div className="absolute bottom-0 left-0 right-0 h-8 md:h-12 w-full bg-primary z-5 pointer-events-none" />
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-12 md:px-6 lg:px-20 pb-12 sm:pb-16 lg:pb-20 flex flex-col items-start justify-center">
-        <div className="max-w-2xl flex flex-col gap-5">
+      <div className="relative z-10 w-full max-w-7xl px-5 md:px-6 lg:px-20 pb-12 sm:pb-16 lg:pb-17 flex flex-col items-start justify-center">
+        <div className="lg:max-w-229 flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             {/* Main Headings */}
-            <h1 className="text-[48px] lg:text-[72px] font-bold tracking-[-1.92px] lg:tracking-[-2.88px] text-white leading-[100%] font-sora">
+            <h1 className="text-[48px] lg:text-[72px] font-bold tracking-[-1.92px] lg:tracking-[-2.88px] text-white leading-[100%] font-sora ">
               {title}
               {subtitle}
             </h1>
@@ -64,7 +64,7 @@ export default function Banner({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto">
             <Link
               href={buttonHref}
               className="group inline-flex items-center justify-center gap-2 bg-white text-[#111] font-bold px-6 py-3.5 sm:py-4 rounded-lg text-[18px] hover:bg-accent hover:text-white transition-all duration-200 active:scale-[0.98] shadow-lg hover:shadow-xl font-primary w-full max-w-83.75 sm:w-auto sm:max-w-none"

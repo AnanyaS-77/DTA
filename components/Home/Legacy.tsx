@@ -3594,14 +3594,14 @@ export default function Legacy() {
   return (
     <section className="w-full bg-[#111] flex flex-col lg:flex-row items-stretch">
       {/* Left Column: Our Legacy of Champions */}
-      <div className="w-full lg:w-1/2 bg-[#111] text-white lg:p-20 flex flex-col justify-center items-end px-5 py-14">
+      <div className="w-full lg:w-1/2 bg-[#111] text-white px-5 py-14 lg:py-30 lg:px-20 flex flex-col justify-center items-end">
         <div className="lg:max-w-135 flex flex-col lg:gap-16 w-full gap-12">
           {/* Header Block (Standard Styles) */}
           <div className="flex flex-col items-start text-left gap-2">
             <h2 className="text-[36px] lg:text-[56px] font-bold text-white tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               Our Legacy of Champions
             </h2>
-            <p className="text-md text-white-Secondary leading-relaxed font-primary font-normal">
+            <p className="text-md text-white-Secondary leading-relaxed font-primary font-normal md:max-w-150">
               Under the guidance of Grand Master H.L. Muthappa Huderi, our
               students have proudly represented Bangalore across district,
               state, national, and championship platforms.
@@ -3633,7 +3633,7 @@ export default function Legacy() {
 
       {/* Right Column: Gradient Promo */}
       <div
-        className="w-full lg:w-1/2 p-5 sm:p-10 flex flex-col justify-between items-start text-white min-h-125 lg:min-h-0 relative overflow-hidden"
+        className="w-full lg:w-1/2 px-5 py-14 lg:py-0 lg:pl-5 flex flex-col justify-between items-start text-white min-h-125 lg:min-h-0 relative overflow-hidden"
         style={{
           background:
             "linear-gradient(216deg, #5A06BF 0%, #F23000 36.56%, #D30008 56.27%, #8D070D 100%)",
