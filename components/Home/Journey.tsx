@@ -40,7 +40,7 @@ export default function Journey({
           viewBox="0 0 756 654"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full max-w-189 h-auto"
+          className="w-full  h-auto"
         >
           <g filter="url(#filter0_f_317_1434)">
             <circle cx="378" cy="327" r="78" fill="#C30000" />

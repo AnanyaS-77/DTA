@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "../public/assets/DTA logo.webp";
@@ -10,6 +10,17 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileBatchOpen, setMobileBatchOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -201,7 +212,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-950 focus:outline-none dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white"
+              className="inline-flex items-center justify-center rounded-lg p-2 text-zinc-500 hover:text-black focus:outline-none cursor-pointer transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >

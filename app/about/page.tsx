@@ -9,7 +9,7 @@ import Journey from "@/components/Home/Journey";
 import Timings from "@/components/Home/Timings";
 import Moments from "@/components/Home/Moments";
 import Testimonial from "@/components/Home/Testimonial";
-import aboutBannerImg from "@/public/assets/About/AboutBanner.jpg";
+import aboutBannerImg from "@/public/assets/About/Banner/AboutBanner.jpg";
 
 export default function About() {
   return (

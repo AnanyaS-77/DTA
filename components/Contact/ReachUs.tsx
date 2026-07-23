@@ -148,8 +148,7 @@ export default function ReachUs() {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="text-md font-semibold text-primary hover:text-accent transition-colors block leading-relaxed"
-                  style={{ fontFamily: "Manrope, sans-serif" }}
+                  className="text-md font-semibold text-primary hover:text-accent transition-colors block leading-relaxed font-primary"
                 >
                   {item.detail}
                 </a>
