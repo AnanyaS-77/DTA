@@ -168,7 +168,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:underline hover:text-accent transition-colors duration-300 font-semibold"
               >
-                Koiostudios
+                Koiostudio
               </a>
             </div>
           </div>

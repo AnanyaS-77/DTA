@@ -121,7 +121,7 @@ export default function Testimonial({
         {/* Inner Cards flex container */}
         <div
           ref={trackRef}
-          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px] pr-20 pl-5 lg:pl-0"
+          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px] pr-20 pl-0"
           style={{
             left: `-${scrollX}px`,
           }}

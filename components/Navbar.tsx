@@ -29,30 +29,20 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-16 px-4 sm:px-8 md:px-12 lg:px-20 justify-between items-center border-b border-zinc-100">
-        <div className="flex h-16 items-center justify-between w-full relative">
+      <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-12 md:h-16 px-5 sm:px-8 md:px-12 lg:px-20 justify-between items-center border-b border-zinc-100">
+        <div className="flex  items-center justify-between w-full relative h-auto">
           {/* Logo */}
           <div className="shrink-0">
             <Link href="/" className="flex items-center gap-1.25 group">
               <img
                 src={logo.src}
                 alt="DTA Logo Mark"
-                style={{
-                  width: "47.243px",
-                  height: "53px",
-                  aspectRatio: "41/46",
-                }}
-                className=" object-cover "
+                className="w-[36.465px] h-[40.908px] md:w-[47.243px] md:h-[53px] aspect-[41/46] object-cover"
               />
               <img
                 src={logo1.src}
                 alt="DTA Logo Text"
-                style={{
-                  width: "93.097px",
-                  height: "28.981px",
-                  aspectRatio: "93.10/28.98",
-                }}
-                className="object-cover "
+                className="w-[71.857px] h-[22.369px] md:w-[93.097px] md:h-[28.981px] aspect-[71.86/22.37] object-cover"
               />
             </Link>
           </div>
@@ -251,7 +241,7 @@ export default function Navbar() {
         </div>
         {/* Mobile Full-Screen White Drawer */}
         {isOpen && (
-          <div className="fixed top-16 left-0 right-0 bottom-0 h-[calc(100dvh-4rem)] bg-white z-50 flex flex-col justify-between p-6 md:hidden overflow-y-auto border-t border-zinc-100 animate-in fade-in duration-200">
+          <div className="fixed top-12 left-0 right-0 bottom-0 h-[calc(100dvh-3rem)] bg-white z-50 flex flex-col justify-between p-6 md:hidden overflow-y-auto border-t border-zinc-100 animate-in fade-in duration-200">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -296,7 +286,7 @@ export default function Navbar() {
                 </button>
 
                 {mobileBatchOpen && (
-                  <div className="px-4 pb-4 pt-1 flex flex-col gap-4 text-left border-t border-zinc-100 bg-white">
+                  <div className="p-4 flex flex-col gap-4 text-left border-t border-zinc-100 bg-white">
                     {/* Section 1 */}
                     <div className="flex flex-col gap-1 border-b border-zinc-100 pb-3">
                       <h4 className="text-base font-semibold text-accent font-primary">

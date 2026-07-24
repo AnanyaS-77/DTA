@@ -15,7 +15,7 @@ interface JourneyProps {
 export default function Journey({
   title = (
     <>
-      Start Your <span className="text-accent">Martial Arts</span> <br />
+      Start Your <span className="text-accent">Martial Arts</span> <br className="hidden lg:inline" />
       <span className="text-accent">Journey</span> Today!
     </>
   ),
@@ -33,14 +33,14 @@ export default function Journey({
       }}
     >
       {/* Background Glow */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex justify-center items-center select-none opacity-80">
+      <div className="absolute inset-0 z-0 pointer-events-none flex justify-center items-center select-none opacity-100 lg:opacity-80">
         <svg
           width="756"
           height="654"
           viewBox="0 0 756 654"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full  h-auto"
+          className="w-[150%] sm:w-[120%] lg:w-full max-w-none h-auto scale-150 sm:scale-125 lg:scale-100"
         >
           <g filter="url(#filter0_f_317_1434)">
             <circle cx="378" cy="327" r="78" fill="#C30000" />

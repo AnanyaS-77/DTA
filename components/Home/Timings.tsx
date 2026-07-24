@@ -17,7 +17,7 @@ export default function Timings({
 
   const eveningSlots = [
     "03:00 PM – 04:00 PM",
-    "03:00 AM – 04:00 PM",
+    "04:00 PM – 05:00 PM",
     "05:00 PM – 06:00 PM",
     "06:00 PM – 07:00 PM",
     "07:00 PM – 08:00 PM",

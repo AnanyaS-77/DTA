@@ -177,7 +177,7 @@ export default function Bangalore() {
         {/* Header Block (Same as other sections) */}
         <div className="flex flex-col items-start text-left gap-2 max-w-4xl">
           <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
-            Why Families Across <br /> Bangalore Choose <br />
+            Why Families Across <br className="hidden lg:inline" /> Bangalore Choose <br className="hidden lg:inline" />
             Deccan Taekwondo Academy
           </h2>
           <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-150">
