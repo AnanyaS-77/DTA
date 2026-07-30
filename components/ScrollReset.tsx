@@ -11,7 +11,7 @@ export default function ScrollReset() {
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" as any });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function ScrollReset() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant" as any, // Bypass smooth scroll to ensure immediate reset
+      behavior: "instant", // Bypass smooth scroll to ensure immediate reset
     });
   }, [pathname]);
 

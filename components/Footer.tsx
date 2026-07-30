@@ -38,13 +38,13 @@ export default function Footer() {
           <div className="w-full flex flex-col md:flex-row justify-between items-center lg:gap-8 gap-11">
             {/* Logo Brand */}
             <Link href="/" className="flex items-center gap-1.5">
-              <img
-                src={logo.src}
+              <Image
+                src={logo}
                 alt="DTA Logo Mark"
                 className="w-11.75 h-13.25 object-contain"
               />
-              <img
-                src={logo1.src}
+              <Image
+                src={logo1}
                 alt="DTA Logo Text"
                 className="w-23.25 h-7.25 object-contain"
               />

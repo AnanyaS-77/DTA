@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import img1 from "@/public/assets/Home/Moments/Image1.webp";
 import img2 from "@/public/assets/Home/Moments/Image2.webp";
 import img3 from "@/public/assets/Home/Moments/Image3.webp";
@@ -31,7 +31,7 @@ import img26 from "@/public/assets/Home/Moments/Image26.webp";
 
 interface MomentCard {
   height: number;
-  img: any;
+  img: string | StaticImageData;
 }
 
 interface MomentColumn {

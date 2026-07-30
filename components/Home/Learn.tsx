@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import coach1 from "@/public/assets/Home/Learn/Image1.webp";
 import coach2 from "@/public/assets/Home/Learn/Image2.webp";
 
@@ -8,7 +8,7 @@ interface Coach {
   name: string;
   cert: string;
   desc: string;
-  image: any;
+  image: string | StaticImageData;
   tags: string[];
 }
 

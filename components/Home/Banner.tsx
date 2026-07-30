@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import bannerImg from "@/public/assets/Home/Banner/Banner.webp";
 
 interface BannerProps {
@@ -13,7 +13,7 @@ interface BannerProps {
   buttonHref?: string;
   phone?: string;
   phoneText?: string;
-  image?: any;
+  image?: string | StaticImageData;
 }
 
 export default function Banner({

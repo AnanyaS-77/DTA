@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import image1 from "@/public/assets/Home/Programs/image1.webp";
 import image2 from "@/public/assets/Home/Programs/image2.webp";
 import image3 from "@/public/assets/Home/Programs/image3.webp";
@@ -10,7 +10,7 @@ import image4 from "@/public/assets/Home/Programs/image4.webp";
 interface ProgramItem {
   title: string;
   desc: string;
-  image: any;
+  image: string | StaticImageData;
   isAccent?: boolean;
 }
 

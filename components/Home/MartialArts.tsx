@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import image1 from "@/public/assets/Home/MartialArts/image1.webp";
 import image2 from "@/public/assets/Home/MartialArts/image2.webp";
 import image3 from "@/public/assets/Home/MartialArts/image3.webp";
@@ -12,7 +12,7 @@ import image6 from "@/public/assets/Home/MartialArts/image6.webp";
 interface Program {
   title: string;
   desc: string;
-  image: any;
+  image: string | StaticImageData;
 }
 
 interface MartialArtsProps {

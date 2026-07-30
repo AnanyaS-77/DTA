@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import championsImage from "@/public/assets/Home/Champions/Image.webp";
 
 interface ChampionsProps {
@@ -11,7 +11,7 @@ interface ChampionsProps {
   paragraphs?: string[];
   ctaText?: string;
   ctaHref?: string;
-  image?: any;
+  image?: string | StaticImageData;
   className?: string;
 }
 
