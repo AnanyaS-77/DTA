@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "../public/assets/DTA logo.webp";
 import logo1 from "../public/assets/DTA logo1.webp";
@@ -29,32 +30,34 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-12 md:h-16 px-5 sm:px-8 md:px-12 lg:px-20 justify-between items-center border-b border-zinc-100">
-        <div className="flex  items-center justify-between w-full relative h-auto">
+      <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-14 md:h-16 px-5 sm:px-8 md:px-12 lg:px-20 flex items-center border-b border-zinc-100">
+        <div className="flex items-center justify-between w-full relative h-full">
           {/* Logo */}
-          <div className="shrink-0">
+          <div className="shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-1.25 group">
-              <img
-                src={logo.src}
+              <Image
+                src={logo}
                 alt="DTA Logo Mark"
-                className="w-[36.465px] h-[40.908px] md:w-[47.243px] md:h-[53px] aspect-[41/46] object-cover"
+                priority
+                className="w-9 h-10 md:w-10.5 md:h-11.75 object-contain"
               />
-              <img
-                src={logo1.src}
+              <Image
+                src={logo1}
                 alt="DTA Logo Text"
-                className="w-[71.857px] h-[22.369px] md:w-[93.097px] md:h-[28.981px] aspect-[71.86/22.37] object-cover"
+                priority
+                className="w-18 h-5.5 md:w-21.5 md:h-6.5 object-contain"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 h-full">
             {navLinks.map((link) => {
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative py-1 transition-colors duration-200 text-primary hover:text-accent font-primary text-md font-medium"
+                  className="relative flex items-center py-1 transition-colors duration-200 text-primary hover:text-accent font-primary text-md font-medium"
                 >
                   {link.name}
                 </Link>
@@ -63,7 +66,7 @@ export default function Navbar() {
 
             {/* Batch Timings Dropdown */}
             <div
-              className=""
+              className="relative flex items-center h-full"
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
@@ -178,7 +181,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/contact"
-              className="text-lg font-bold text-white transition-all duration-200 hover:opacity-90 active:scale-95 shadow-md shadow-red-600/10 hover:shadow-lg hover:shadow-red-600/20 flex items-center justify-center h-12 p-4 gap-2 rounded-lg bg-accent backdrop-blur-[20px]"
+              className="text-base font-bold text-white transition-all duration-200 hover:opacity-90 active:scale-95 shadow-md shadow-red-600/10 hover:shadow-lg hover:shadow-red-600/20 flex items-center justify-center px-5 h-10 md:h-11 gap-2 rounded-lg bg-accent backdrop-blur-[20px]"
             >
               Talk to Us
               <svg
@@ -198,7 +201,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
