@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import coach1 from "@/public/assets/Home/Learn/Image1.jpeg";
+import coach1 from "@/public/assets/Home/Learn/Image1.png";
 import coach2 from "@/public/assets/Home/Learn/Image2.jpeg";
 
 interface Coach {

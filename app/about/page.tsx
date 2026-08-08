@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Banner from "@/components/Home/Banner";
 import Champions from "@/components/Home/Champions";
 import Authority from "@/components/Home/Authority";
