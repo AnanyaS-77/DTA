@@ -22,6 +22,7 @@ export default function About() {
         image={aboutBannerImg}
       />
       <Champions
+        showCta={false}
         className="lg:rounded-t-[64px] rounded-t-[36px]"
         subtitle="Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years."
         paragraphs={[

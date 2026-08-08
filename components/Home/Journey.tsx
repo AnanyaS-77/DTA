@@ -108,12 +108,12 @@ export default function Journey({
               </svg>
             </Link>
 
-            <a
-              href={`tel:${phone}`}
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center bg-white/20 hover:bg-[#FBE9E9] text-white hover:text-accent font-semibold p-4 rounded-lg border border-white/20 hover:border-accent transition-all duration-200 active:scale-[0.98] text-lg font-primary w-full max-w-83.75 sm:w-auto sm:max-w-none"
             >
               {phoneText}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

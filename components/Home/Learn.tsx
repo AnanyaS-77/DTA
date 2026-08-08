@@ -1,8 +1,8 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import coach1 from "@/public/assets/Home/Learn/Image1.webp";
-import coach2 from "@/public/assets/Home/Learn/Image2.webp";
+import coach1 from "@/public/assets/Home/Learn/Image1.jpeg";
+import coach2 from "@/public/assets/Home/Learn/Image2.jpeg";
 
 interface Coach {
   name: string;
@@ -10,6 +10,7 @@ interface Coach {
   desc: string;
   image: string | StaticImageData;
   tags: string[];
+  objectFit?: string;
 }
 
 interface LearnProps {
@@ -18,7 +19,7 @@ interface LearnProps {
   coaches?: Coach[];
 }
 
-const coachesData = [
+const coachesData: Coach[] = [
   {
     name: "Grand Master H.L. Muthappa Huderi",
     cert: "7th Dan Black Belt",
@@ -29,6 +30,7 @@ const coachesData = [
       "Award Winning Coach",
       "Poomsae & Kyorugi Specialist",
     ],
+    objectFit: "object-cover object-top",
   },
   {
     name: "Head Coach Bhupendra",
@@ -42,6 +44,7 @@ const coachesData = [
       "Confidence Building",
       "Beginner Development",
     ],
+    objectFit: "object-contain",
   },
 ];
 
@@ -77,7 +80,10 @@ export default function Learn({
                   alt={coach.name}
                   fill
                   sizes="414px"
-                  className="object-cover"
+                  className={
+                    coach.objectFit ||
+                    (idx === 0 ? "object-cover" : "object-contain")
+                  }
                 />
               </div>
 
