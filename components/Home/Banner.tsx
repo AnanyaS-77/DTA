@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import bannerImg from "@/public/assets/Home/Banner/Banner.webp";
+import bannerRespImg from "@/public/assets/Home/Banner/Banner-resp.png";
 
 interface BannerProps {
   title?: React.ReactNode;
@@ -14,6 +15,7 @@ interface BannerProps {
   phone?: string;
   phoneText?: string;
   image?: string | StaticImageData;
+  responsiveImage?: string | StaticImageData;
 }
 
 export default function Banner({
@@ -25,19 +27,46 @@ export default function Banner({
   phone = "+919876543210",
   phoneText = "Call Us Now",
   image = bannerImg,
+  responsiveImage,
 }: BannerProps) {
+  const activeResponsiveImage =
+    responsiveImage || (image === bannerImg ? bannerRespImg : undefined);
+
   return (
     <section className="relative w-full overflow-hidden bg-primary min-h-[calc(100svh-4rem)] flex items-end">
       {/* Background Image & Overlays */}
       <div className="absolute inset-0 h-full w-full z-0 select-none pointer-events-none">
-        <Image
-          src={image}
-          alt="Deccan Taekwondo Academy Sparring"
-          fill
-          priority
-          placeholder={image === bannerImg ? "blur" : undefined}
-          className="object-cover object-center h-full w-full"
-        />
+        {activeResponsiveImage ? (
+          <>
+            {/* Desktop Background Image */}
+            <Image
+              src={image}
+              alt="Deccan Taekwondo Academy Sparring"
+              fill
+              priority
+              placeholder={image === bannerImg ? "blur" : undefined}
+              className="hidden md:block object-cover object-center h-full w-full"
+            />
+            {/* Mobile / Responsive Background Image */}
+            <Image
+              src={activeResponsiveImage}
+              alt="Deccan Taekwondo Academy Sparring Mobile"
+              fill
+              priority
+              placeholder={activeResponsiveImage === bannerRespImg ? "blur" : undefined}
+              className="block md:hidden object-cover object-center h-full w-full"
+            />
+          </>
+        ) : (
+          <Image
+            src={image}
+            alt="Deccan Taekwondo Academy Sparring"
+            fill
+            priority
+            placeholder={image === bannerImg ? "blur" : undefined}
+            className="object-cover object-center h-full w-full"
+          />
+        )}
       </div>
 
       {/* Bottom Horizontal Blur Transition */}
