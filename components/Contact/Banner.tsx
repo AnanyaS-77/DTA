@@ -74,7 +74,7 @@ export default function ContactBanner() {
                 Message Sent!
               </h3>
               <p className="mt-1 text-xs text-emerald-600">
-                We'll get back to you shortly.
+                We&apos;ll get back to you shortly.
               </p>
             </div>
           ) : (

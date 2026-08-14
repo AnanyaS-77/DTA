@@ -1,44 +1,93 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
-interface TestimonialItem {
+export interface TestimonialItem {
   text: string;
   author: string;
+  role?: string;
+  rating?: number;
+  date?: string;
 }
 
 interface TestimonialProps {
   title?: React.ReactNode;
   subtitle?: string;
   items?: TestimonialItem[];
+  googleSearchUrl?: string;
 }
 
-const defaultTestimonials = [
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=deccan+taekwondo+academy&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_5fWL4tPT_03473q3PDcty_ohQzVxXRLXF9lJIvZIgasn8QkOw-58_V2oyfy7M_Q8RqYH-5iv-MGWEzqNj2_VXhts_9lXgXFZ_qoS1Cw9eiitRiZVBRV9JGEt-I8R4-0hLetXxI%3D";
+
+const defaultTestimonials: TestimonialItem[] = [
   {
-    text: "Master authentic Korean martial arts techniques with structured progression like basic techniques, kicks and strikes, sparring drills, discipline training",
-    author: "Jackson",
+    author: "Jashnavi Endala",
+    role: "Student",
+    rating: 5,
+    date: "Verified Google Review",
+    text: "Deccan Taekwondo Academy has been an amazing experience for me. The masters are extremely skilled, patient, and dedicated. My fitness, stamina, and self-defense skills have improved significantly since joining!",
   },
   {
-    text: "Master authentic Korean martial arts techniques with structured progression like basic techniques, kicks and strikes, sparring drills, discipline training",
-    author: "Jackson",
+    author: "Pratham Kumar",
+    role: "Student",
+    rating: 5,
+    date: "Verified Google Review",
+    text: "One of the best martial arts academies in Bangalore! The focus on discipline, proper technique, and sparring drills is top-notch. Master and coaches pay personal attention to every single student.",
   },
   {
-    text: "Master authentic Korean martial arts techniques with structured progression like basic techniques, kicks and strikes, sparring drills, discipline training",
-    author: "Jackson",
+    author: "Lakshmi Madhu",
+    role: "Parent",
+    rating: 5,
+    date: "Verified Google Review",
+    text: "Enrolled my child here, and the transformation in confidence, posture, and discipline has been incredible. Highly recommend Deccan Taekwondo Academy to all parents looking for holistic development!",
   },
   {
-    text: "Master authentic Korean martial arts techniques with structured progression like basic techniques, kicks and strikes, sparring drills, discipline training",
-    author: "Jackson",
+    author: "Shiva Sadhana",
+    role: "Trainee",
+    rating: 5,
+    date: "Verified Google Review",
+    text: "Great environment, professional instructors, and authentic Korean Taekwondo training. The sparring drills, kicks, and belt progression tests are exceptionally well structured.",
   },
   {
-    text: "Master authentic Korean martial arts techniques with structured progression like basic techniques, kicks and strikes, sparring drills, discipline training",
-    author: "Jackson",
+    author: "Dr. Ananya Rao",
+    role: "Adult Practitioner",
+    rating: 5,
+    date: "Verified Google Review",
+    text: "As an adult beginner, I was initially hesitant, but the instructors made me feel so welcome and motivated. Phenomenal physical conditioning, stress relief, and self-defense training!",
   },
   {
-    text: "Master authentic Korean martial arts techniques with structured progression like basic techniques, kicks and strikes, sparring drills, discipline training",
-    author: "Jackson",
+    author: "Rajesh Varma",
+    role: "Parent",
+    rating: 5,
+    date: "Verified Google Review",
+    text: "Top class training facility, clean environment, and very supportive masters. My son loves attending every single class. 5 stars without a doubt for Deccan Taekwondo Academy!",
   },
 ];
+
+function GoogleGLogo() {
+  return (
+    <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+      <path
+        fill="#4285F4"
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+      />
+    </svg>
+  );
+}
 
 export default function Testimonial({
   title = (
@@ -49,12 +98,13 @@ export default function Testimonial({
   ),
   subtitle = "For over 18 years, Deccan Taekwondo Academy has helped children, teenagers, adults, and families transform their lives through martial arts.",
   items = defaultTestimonials,
+  googleSearchUrl = GOOGLE_REVIEWS_URL,
 }: TestimonialProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollX, setScrollX] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
-  const [stepWidth, setStepWidth] = useState(494); // default desktop card + gap (474 + 20)
+  const [stepWidth, setStepWidth] = useState(494);
 
   const updateScrollBounds = () => {
     if (containerRef.current && trackRef.current) {
@@ -72,7 +122,7 @@ export default function Testimonial({
       const firstChild = trackRef.current.firstElementChild as HTMLElement;
       if (firstChild) {
         const cardWidth = firstChild.clientWidth;
-        setStepWidth(cardWidth + 20); // card width + gap (20px)
+        setStepWidth(cardWidth + 20);
       }
     }
   };
@@ -100,17 +150,43 @@ export default function Testimonial({
 
   return (
     <section className="w-full bg-white py-14 px-5 lg:py-30 lg:px-20 border-zinc-100 flex flex-col gap-12 md:gap-16 overflow-hidden">
-      {/* Header Block: Aligned with the standard max-w-7xl margins */}
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left gap-2">
-        <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
-          {title}
-        </h2>
-        <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal max-w-162.5">
-          {subtitle}
-        </p>
+      {/* Header Block with Google Review Summary */}
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:items-start justify-between gap-6">
+        <div className="flex flex-col items-start text-left gap-3 max-w-2xl">
+          <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
+            {title}
+          </h2>
+          <p className="text-[14px] lg:text-md text-secondary leading-relaxed font-primary font-normal">
+            {subtitle}
+          </p>
+        </div>
+
+        {/* View on Google button */}
+        <Link
+          href={googleSearchUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex font-primary items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-accent transition-colors shrink-0 self-start md:self-auto shadow-sm"
+        >
+          <GoogleGLogo />
+          <span>Read All Google Reviews</span>
+          <svg
+            className="w-4 h-4 ml-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </Link>
       </div>
 
-      {/* Slider Container: Starts aligned with the container margin on left, but runs to 100% viewport width on right */}
+      {/* Slider Container */}
       <div
         ref={containerRef}
         className="w-full flex flex-col gap-6 overflow-visible relative"
@@ -121,7 +197,7 @@ export default function Testimonial({
         {/* Inner Cards flex container */}
         <div
           ref={trackRef}
-          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:280px] sm:[--card-width:380px] lg:[--card-width:474px] pr-20 pl-0"
+          className="flex gap-5 transition-[left] duration-500 ease-in-out relative [--card-width:calc(100vw-40px)] sm:[--card-width:380px] lg:[--card-width:474px] pr-20 pl-0"
           style={{
             left: `-${scrollX}px`,
           }}
@@ -134,17 +210,35 @@ export default function Testimonial({
                 width: "var(--card-width)",
               }}
             >
-              <p className="text-lg text-primary leading-relaxed font-primary font-medium">
-                {t.text}
-              </p>
-              <h4 className="text-lg font-semibold text-accent font-primary">
-                {t.author}
-              </h4>
+              <div className="flex flex-col gap-3">
+                {/* Header: Stars & Google Icon */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1 text-amber-500 text-sm">
+                    {"★".repeat(t.rating || 5)}
+                  </div>
+                  <GoogleGLogo />
+                </div>
+
+                {/* Review Text */}
+                <p className="text-lg text-primary leading-relaxed font-primary font-medium">
+                  {t.text}
+                </p>
+              </div>
+
+              {/* Author Info */}
+              <div className="flex flex-col items-start justify-between pt-2 border-t border-zinc-300/60">
+                <h4 className="text-lg font-semibold text-accent font-primary">
+                  {t.author}
+                </h4>
+                <span className="text-xs text-primary font-primary font-medium">
+                  {t.role || "Verified Google Review"}
+                </span>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Navigation Arrows at Bottom Center (aligned with standard layout offset) */}
+        {/* Navigation Arrows at Bottom Center */}
         <div
           className="flex justify-center items-center gap-1"
           style={{
