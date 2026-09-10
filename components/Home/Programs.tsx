@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import image1 from "@/public/assets/Home/Programs/image1.webp";
+import image1 from "@/public/assets/Home/Programs/image1.jpeg";
 import image2 from "@/public/assets/Home/Programs/image2.webp";
-import image3 from "@/public/assets/Home/Programs/image3.webp";
+import image3 from "@/public/assets/Home/Programs/image3.jpeg";
 import image4 from "@/public/assets/Home/Programs/image4.webp";
 
 interface ProgramItem {
@@ -63,7 +63,7 @@ function HoverRow({ item, idx }: { item: ProgramItem; idx: number }) {
     >
       {/* Image Container */}
       <div
-        className="w-37.5 h-37.5 flex items-center justify-center shrink-0 overflow-hidden pr-6"
+        className="w-37.5 h-37.5 flex items-center justify-center shrink-0 overflow-hidden"
         style={{ borderRight: "1px solid #f2f2f2" }}
       >
         <Image

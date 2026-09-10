@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import contactBannerImg from "@/public/assets/Contact/Image.webp";
+import contactBannerImg from "@/public/assets/Contact/Image.jpeg";
 
 export default function ContactBanner() {
   const [formData, setFormData] = useState({
@@ -10,6 +10,7 @@ export default function ContactBanner() {
     email: "",
     mobile: "",
     topic: "",
+    otherTopic: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -19,7 +20,7 @@ export default function ContactBanner() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: "", email: "", mobile: "", topic: "", message: "" });
+      setFormData({ name: "", email: "", mobile: "", topic: "", otherTopic: "", message: "" });
     }, 3000);
   };
 
@@ -170,6 +171,19 @@ export default function ContactBanner() {
                     ))}
                   </select>
                 </div>
+                {formData.topic === "Other" && (
+                  <input
+                    type="text"
+                    id="banner-other-topic"
+                    required
+                    value={formData.otherTopic}
+                    onChange={(e) =>
+                      setFormData({ ...formData, otherTopic: e.target.value })
+                    }
+                    placeholder="Please specify your topic"
+                    className="w-full border border-zinc-200 rounded-md px-4 py-2.5 text-sm text-zinc-700 focus:outline-none focus:ring-0 transition"
+                  />
+                )}
               </div>
 
               {/* Message */}

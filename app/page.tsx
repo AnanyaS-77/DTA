@@ -2,7 +2,7 @@ import Link from "next/link";
 import Banner from "@/components/Home/Banner";
 import Stats from "@/components/Home/Stats";
 import MartialArts from "@/components/Home/MartialArts";
-import AudienceBanner from "@/components/Home/AudienceBanner";
+// import AudienceBanner from "@/components/Home/AudienceBanner";
 import Authority from "@/components/Home/Authority";
 import Champions from "@/components/Home/Champions";
 import Bangalore from "@/components/Home/Bangalore";
@@ -19,7 +19,7 @@ export default function Home() {
     <div className="relative isolate overflow-hidden bg-[#111] transition-colors duration-300">
       <Banner />
       <Stats />
-      <AudienceBanner />
+      {/* <AudienceBanner /> */}
       <Authority />
       <Champions />
       <Bangalore />

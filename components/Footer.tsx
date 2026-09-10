@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/assets/Footer/logo1.webp";
-import logo1 from "../public/assets/Footer/logo2.webp";
+// import logo1 from "../public/assets/Footer/logo2.webp";
 import footerBg from "../public/assets/Footer/Footer.webp";
 import footerRespBg from "../public/assets/Footer/Footer-resp.webp";
 
@@ -41,12 +41,7 @@ export default function Footer() {
               <Image
                 src={logo}
                 alt="DTA Logo Mark"
-                className="w-11.75 h-13.25 object-contain"
-              />
-              <Image
-                src={logo1}
-                alt="DTA Logo Text"
-                className="w-23.25 h-7.25 object-contain"
+                className="  w-auto h-15 object-cover"
               />
             </Link>
 
@@ -161,7 +156,7 @@ export default function Footer() {
 
             {/* Credits */}
             <div className="text-md font-medium text-zinc-400">
-              Crafted by{" "}
+              Made with ❤️ by{" "}
               <a
                 href="https://www.koiostudio.com"
                 target="_blank"

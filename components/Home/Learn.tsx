@@ -67,14 +67,16 @@ export default function Learn({
         </div>
 
         {/* Coaches Grid */}
-        <div className="w-full grid lg:grid-cols-2 lg:gap-5 gap-12">
+        <div className="w-full grid lg:grid-cols-1  gap-16">
           {coaches.map((coach, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center text-center gap-5"
+              className={`flex items-center text-center gap-5 ${
+                idx === 0 ? "flex-row" : "flex-row-reverse"
+              }`}
             >
               {/* Image Container with explicit dimensions: width 414px, height 445px */}
-              <div className="w-full h-auto aspect-414/445 md:w-103.5 md:h-111.25 relative rounded-2xl overflow-hidden border border-[#D6D6D6] bg-[#F2F2F2]">
+              <div className="w-1/2 h-auto aspect-414/445  md:h-111.25 relative rounded-2xl overflow-hidden border border-[#D6D6D6] bg-[#F2F2F2]">
                 <Image
                   src={coach.image}
                   alt={coach.name}
@@ -88,7 +90,7 @@ export default function Learn({
               </div>
 
               {/* Profile Details Container */}
-              <div className="flex flex-col items-center text-center md:gap-6 gap-2">
+              <div className="flex flex-col items-center text-center md:gap-6 gap-2 w-1/2">
                 {/* Info Text Block (8px gap) */}
                 <div className="flex flex-col items-center gap-2 w-full">
                   {/* Coach Name */}
@@ -320,18 +322,16 @@ export default function Learn({
                 <p className="lg:text-lg text-primary leading-relaxed font-primary font-medium ">
                   {coach.desc}
                 </p>
-              </div>
-
-              {/* Badges / Tags */}
-              <div className="flex flex-wrap justify-center gap-1">
-                {coach.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="bg-white border border-[#D6D6D6] rounded-sm p-2 text-md text-primary font-primary font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <div className="flex flex-wrap justify-center gap-1">
+                  {coach.tags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="bg-white border border-[#D6D6D6] rounded-sm p-2 text-md text-primary font-primary font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

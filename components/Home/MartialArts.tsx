@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import image1 from "@/public/assets/Home/MartialArts/image1.webp";
-import image2 from "@/public/assets/Home/MartialArts/image2.webp";
+import image2 from "@/public/assets/Home/MartialArts/image2.jpeg";
 import image3 from "@/public/assets/Home/MartialArts/image3.webp";
 import image4 from "@/public/assets/Home/MartialArts/image4.webp";
-import image5 from "@/public/assets/Home/MartialArts/image5.webp";
+import image5 from "@/public/assets/Home/MartialArts/image5.jpeg";
 import image6 from "@/public/assets/Home/MartialArts/image6.webp";
 
 interface Program {

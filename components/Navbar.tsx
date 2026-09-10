@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "../public/assets/DTA logo.webp";
-import logo1 from "../public/assets/DTA logo1.webp";
+// import logo1 from "../public/assets/DTA logo1.webp";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-white h-14 md:h-16 px-5 sm:px-8 md:px-12 lg:px-20 flex items-center border-b border-zinc-100">
-        <div className="flex items-center justify-between w-full relative h-full">
+        <div className="flex items-center justify-between w-screen relative h-full">
           {/* Logo */}
           <div className="shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-1.25 group">
@@ -39,14 +39,14 @@ export default function Navbar() {
                 src={logo}
                 alt="DTA Logo Mark"
                 priority
-                className="w-9 h-10 md:w-10.5 md:h-11.75 object-contain"
+                className="w-auto h-14 object-cover"
               />
-              <Image
+              {/* <Image
                 src={logo1}
                 alt="DTA Logo Text"
                 priority
                 className="w-18 h-5.5 md:w-21.5 md:h-6.5 object-contain"
-              />
+              /> */}
             </Link>
           </div>
 
@@ -183,7 +183,7 @@ export default function Navbar() {
               href="/contact"
               className="text-base font-bold text-white transition-all duration-200 hover:opacity-90 active:scale-95 shadow-md shadow-red-600/10 hover:shadow-lg hover:shadow-red-600/20 flex items-center justify-center px-5 h-10 md:h-11 gap-2 rounded-lg bg-accent backdrop-blur-[20px]"
             >
-              Talk to Us
+              Get Started
               <svg
                 className="h-4 w-4"
                 fill="none"
@@ -356,7 +356,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="w-full text-base font-bold text-white shadow-md shadow-red-600/10 hover:opacity-90 active:scale-95 transition-all flex items-center justify-center h-12 p-4 gap-2.5 rounded-lg bg-accent backdrop-blur-[20px] font-primary"
               >
-                Talk to Us
+                Get Started
                 <svg
                   className="h-4 w-4"
                   fill="none"

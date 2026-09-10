@@ -1,9 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import championsImage from "@/public/assets/Home/Champions/Image.webp";
+import championsImage2 from "@/public/assets/Home/Champions/Image2.jpeg";
+import championsImage3 from "@/public/assets/Home/Champions/Image3.jpeg";
+import championsImage4 from "@/public/assets/Home/Champions/Image4.jpeg";
+import championsImage5 from "@/public/assets/Home/Champions/Image5.jpeg";
+import championsImage6 from "@/public/assets/Home/Champions/Image6.jpeg";
+import championsImage7 from "@/public/assets/Home/Champions/Image7.jpeg";
+import championsImage8 from "@/public/assets/Home/Champions/image8.jpeg";
+import championsImage9 from "@/public/assets/Home/Champions/image9.jpg";
+import championsImage10 from "@/public/assets/Home/Champions/image10.jpg";
 
 interface ChampionsProps {
   title?: string;
@@ -16,9 +25,21 @@ interface ChampionsProps {
   className?: string;
 }
 
+const championImages = [
+  championsImage,
+  championsImage2,
+  championsImage3,
+  championsImage4,
+  championsImage5,
+  championsImage6,
+  championsImage7,
+  championsImage8,
+  championsImage9,
+  championsImage10,
+];
+
 export default function Champions({
   title = "Building Champions Since 2008",
-  subtitle = "Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years.",
   paragraphs = [
     "Deccan Taekwondo Academy has been shaping lives through the power of Korean martial arts for over 18 years.",
     "Founded under the expert guidance of Grand Master H.L. Muthappa Huderi, a 7th Dan Black Belt and internationally recognized martial arts expert, our academy has trained over 10,000 students across Bangalore.",
@@ -26,9 +47,17 @@ export default function Champions({
   ctaText = "Read More",
   ctaHref = "/about",
   showCta = true,
-  image = championsImage,
   className = "",
 }: ChampionsProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % championImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className={`w-full bg-white py-14 px-5 lg:py-30 lg:px-20 flex justify-center ${className}`}
@@ -41,15 +70,12 @@ export default function Champions({
             <h2 className="text-[36px] lg:text-[56px] font-bold text-primary tracking-[-1.44px] lg:tracking-tight font-sora leading-[1.15]">
               {title}
             </h2>
-            <p className="text-[14px] lg:text-[16px] text-secondary leading-relaxed font-primary font-normal max-w-125">
-              {subtitle}
-            </p>
           </div>
 
           {/* Mobile-only Image (Positioned right under header subtitle on responsive screens) */}
           <div className="w-full relative rounded-2xl overflow-hidden aspect-4/3 min-h-64 sm:min-h-80 lg:hidden">
             <Image
-              src={image}
+              src={championImages[currentIndex]}
               alt={title}
               fill
               sizes="(max-width: 1024px) 100vw, 522px"
@@ -104,7 +130,7 @@ export default function Champions({
         {/* Right Column: Image (Desktop only) */}
         <div className="hidden lg:block w-full lg:w-130.5 shrink-0 self-stretch relative rounded-2xl overflow-hidden min-h-100 lg:min-h-0">
           <Image
-            src={image}
+            src={championImages[currentIndex]}
             alt={title}
             fill
             sizes="(max-width: 1024px) 100vw, 522px"

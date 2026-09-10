@@ -4,13 +4,14 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import logo1 from "@/public/assets/Home/Authorities/Rectangle 46.webp";
 import logo2 from "@/public/assets/Home/Authorities/Rectangle 47.webp";
-import logo3 from "@/public/assets/Home/Authorities/Rectangle 49.webp";
+// import logo3 from "@/public/assets/Home/Authorities/Rectangle 49.webp";
 
 interface LogoItem {
   src: string | StaticImageData;
   alt: string;
   width?: number;
   height?: number;
+  link?: string;
 }
 
 interface AuthorityProps {
@@ -20,14 +21,20 @@ interface AuthorityProps {
 }
 
 const defaultLogos = [
-  { src: logo1, alt: "World Taekwondo Affiliation", width: 296, height: 167 },
+  {
+    src: logo1,
+    alt: "World Taekwondo Affiliation",
+    width: 296,
+    height: 167,
+    link: "https://www.worldtaekwondo.org/main",
+  },
   {
     src: logo2,
     alt: "Kukkiwon World Taekwondo Headquarters",
     width: 296,
     height: 167,
+    link: "https://www.kukkiwon.or.kr/eng/main/view",
   },
-  { src: logo3, alt: "Deccan Taekwondo Academy", width: 296, height: 167 },
 ];
 
 export default function Authority({
@@ -49,9 +56,13 @@ export default function Authority({
         </div>
 
         {/* Logos Container */}
-        <div className="w-full flex flex-col md:flex-row gap-12 md:gap-6 justify-between  items-center">
+        <div className="w-full flex flex-col md:flex-row gap-12 justify-around items-center">
           {logos.map((logo, index) => (
-            <div key={index} className="">
+            <div
+              key={index}
+              className="cursor-pointer"
+              onClick={() => logo.link && window.open(logo.link, "_blank")}
+            >
               <Image
                 src={logo.src}
                 alt={logo.alt}

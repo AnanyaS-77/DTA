@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import trophyImg from "@/public/assets/Home/Legacy/trophy.webp";
+// import trophyImg from "@/public/assets/Home/Legacy/trophy.webp";
+import trophyImg1 from "@/public/assets/Home/Legacy/trophy1.jpeg";
 import indianFlagImg from "@/public/assets/Home/Legacy/india.webp";
 const legacyAchievements = [
   {
@@ -3651,9 +3652,9 @@ export default function Legacy() {
         </div>
 
         {/* Large Decorative Trophy image */}
-        <div className="relative w-[448.49px] max-w-full h-auto aspect-53/80 rotate-[-4.793deg] pointer-events-none sm:self-end lg:absolute lg:inset-0 lg:w-full lg:h-full">
+        <div className="relative  h-auto pointer-events-none sm:self-end lg:absolute lg:inset-0 lg:w-full lg:h-full">
           <Image
-            src={trophyImg}
+            src={trophyImg1}
             alt="Trophy"
             fill
             className="object-contain object-bottom-right"

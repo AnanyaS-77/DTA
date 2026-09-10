@@ -67,8 +67,8 @@ export default function ReachUs() {
       ),
       title: "Mail us",
       subtitle: "We are here to help",
-      detail: "you@company.com",
-      href: "mailto:you@company.com",
+      detail: "dta.for.teakwondo@gmail.com",
+      href: "mailto:dta.for.teakwondo@gmail.com",
     },
     {
       icon: (
@@ -102,7 +102,7 @@ export default function ReachUs() {
       subtitle: "Visit Our classes",
       detail:
         "Elegance Garden Appartment, 15, 1st Cross Rd, Srinivas Colony, Sudhama Nagar, Bengaluru, Karnataka 560027",
-      href: "https://maps.google.com",
+      href: "https://maps.app.goo.gl/T8k6EJKwNDHVVHYV7",
     },
   ];
 
